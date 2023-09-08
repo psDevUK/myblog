@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.3.0.732137743534">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.3.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Mission Impossible</title>
+    <meta name="title" content="Mission Impossible">
+    <meta name="description" content="Personal blog about really tought problems that have fallen on me to solve or provide a solution. Most of these solutions have a happy Powershell ending, and for others I have used other tools of the trade to get the job done." />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adam-bacon.netlify.app/misionimpossible/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-bacon.netlify.app/misionimpossible/">
+    <meta property="og:title" content="Mission Impossible">
+    <meta property="og:description" content="Personal blog about really tought problems that have fallen on me to solve or provide a solution. Most of these solutions have a happy Powershell ending, and for others I have used other tools of the trade to get the job done.">
+    <meta property="og:image" content="https://adam-bacon.netlify.app/imgs/dm1.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adam-bacon.netlify.app/misionimpossible/">
+    <meta property="twitter:title" content="Mission Impossible">
+    <meta property="twitter:description" content="Personal blog about really tought problems that have fallen on me to solve or provide a solution. Most of these solutions have a happy Powershell ending, and for others I have used other tools of the trade to get the job done.">
+    <meta property="twitter:image" content="https://adam-bacon.netlify.app/imgs/dm1.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../resources/css/retype.css?v=2.3.0.732137743534" rel="stylesheet" />
+
+    <script type="text/javascript" src="../resources/js/config.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/retype.js?v=2.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">My Powershell Blog</span>
+                            <span class="w-10 ml-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../imgs/powershell.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../imgs/powershelld.png">
+                            </span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="mission-impossible" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mission-impossible">#</doc-anchor-trigger>
+        <span>Mission Impossible</span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="https://twitter.com/psdevuk"><img class="object-cover" src="../imgs/me.jpg"/></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="https://twitter.com/psdevuk">Adam Bacon</a></div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">History</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2022-08-07</span></div>
+</div>
+
+<doc-anchor-target id="mission-impossible">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mission-impossible">#</doc-anchor-trigger>
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0118.75 13H5.25a1.75 1.75 0 01-1.75-1.75v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25H5.25zM1.5 15.75c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 01-1.75 1.75H3.25a1.75 1.75 0 01-1.75-1.75v-4zm1.75-.25a.25.25 0 00-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 00.25-.25v-4a.25.25 0 00-.25-.25H3.25z"/><path fill-rule="evenodd" d="M10 17.75a.75.75 0 01.75-.75h6.5a.75.75 0 010 1.5h-6.5a.75.75 0 01-.75-.75zm-4 0a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5a.75.75 0 01-.75-.75z"/></g></g></svg> Mission Impossible</span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://adam-bacon.netlify.app/imgs/dm.png" alt="Sometimes you may feel like this when tackling an issue that just cannot be solved" />
+    <figcaption class="caption">Sometimes you may feel like this when tackling an issue that just cannot be solved</figcaption>
+</figure>
+</p>
+<p>Well I figured this would be a good section on the website to breifly mention issues or projects that I have been involved in, that have either come to me as no-one else was able to previously solve the issue, or I have developed a way to stream-line the process to either automate the job or to put a process in place which would allow the user to use a bespoke application to solve the problem. I&#x27;m not saying I provided the best solution, but I was able to provide a solution to fix the given problem which no-one else had seemed able to do.</p>
+<doc-anchor-target id="i-been-doing-it-a-long-time">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#i-been-doing-it-a-long-time">#</doc-anchor-trigger>
+        <span>I been doing IT a long time <span class="docs-emoji">&#x1F579;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Too many years have past since I started IT that I kind of feel I should have been able to retire about now. Sadly not, as I haven&#x27;t even paid into a pension, I was just hoping to get super-rich from doing IT, but it seems in hindsight that being a lorry driver would have earnt me much more money with a lot less stress. However after investing just over half my life to working in the IT industry I do not want to give up on it just yet.
+My initial start in IT was off of a Government apprentince scheme, <strong>where I got paid a whole £50 a week</strong> to learn IT. After a few months you got work placement, where sadly <strong>you still only got paid £50 a week</strong>, and I had to use a large proportion of that money just to travel to work. So essentially this was me doing charity work, as I wasn&#x27;t even earning anything from working 9 to 5 for five days a week. I got out of the apprentince scheme as it felt more like slave labour.
+So when I started out in IT, Windows NT was about as a server OS, Windows 2000 clients, or Windows 98 running some weird DOS programs to manage the business. Oh how times have changed. Like the first IT job I got after leaving the IT apprentince scheme, it was for a plumbing company. I was situated upstairs in this small office with an even smaller window which didn&#x27;t open. I was allowed to smoke in that office whilst working with a non-smoker. Wow times really have changed.
+I mean when I was in my early 20s I was doing a lot of work in London going to banks and installing and configuring Remedy. I remember the company I was working for was charging £800 a day to the client for my services, yet I was only taking home £880 a month! I use to spend at least half of every month working in London, damn they were some really long 14+ hour working days, I never really thought about it at the time, but that company was getting my yearly salary in like just under half a month. I moved onto doing Helpdesk work, then onto second line support work and then onto third line support.
+Although IT support has helped me pay the bills over the years I do not really feel like I belong there anymore as it seems every-other support person out there is still pointing and clicking there way through the solution. Just so much time is wasted pointing and clicking, if you actually dedicate sometime to the actual problem you could put a proper solution into place. Then again this might end-up putting a lot of IT support people out of business, if computers had decent scripts running on them which would automatically fix the problem. I am a very strong believer in letting the computer do the hard work, not because I am lazy, but because computers were built and designed to process tasks far more quickly  and efficiently than any human-being could process, and remove the human-error element from the situation as well.
+Thankfully I have had some opportunities to be able to produce my own soluition to the problem, which had landed my way. So I thought that this should get a little blog section of it&#x27;s own to hopefully demonstrate I can do more than just create quirky modules. When I am working for a company I don&#x27;t post any scripts I write in worktime to my own github account. I have regretted this at times, especially when you know you have already written a script to fix that problem, but it&#x27;s at your last job. Well I think this makes you a better scripter by re-writing similar scripts you may have done in the past, as you can always improve the scripts you write. By doing simple things like error handling, logging of scripts output, emailing the outcome to yourself and many other things.</p>
+<doc-anchor-target id="daily-tasks">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#daily-tasks">#</doc-anchor-trigger>
+        <span>Daily Tasks <span class="docs-emoji">&#x1F4C6;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>I done this in several jobs now, where on a daily basis you need to check X, Y and Z to make sure everything is running smoothly on the network or what-ever checks you need to do. Most recently the daily checks tasks was pretty big, big enough that the company had employed a sole person to do this task. This seemed a bit crazy to me, as after a few simple internet searches I saw that the various web-based applications you had to log into all had API or Powershell modules I could use to interact with these applicaitons. So instead of having to log into 6 or 7 different applications clicking here and clicking there to obtain the information I wrote a function. In the function I collected all the required information and placed this into various HTML tables, and emailed this to myself each day. This meant that before I even made it into the office, I had an email that contained all the information the person doing the daily checks would need to check. I could easily view the uptime of over 100 servers, backup information on numerous servers, storage information, health information on hardware, and lots more.
+Previously to this HTML email report, I had actually designed a full on IT dashboard monitoring various aspects of the network and user consumption of server processes. As well as automatic security warnings on accounts expiring or not logging in. Although by no means is this one of my greatest achievements but the fact that it had ever been done before, and it basically automated one persons&#x27; job that to me is a mission impossible, as I guess no one thought it was possible hence doing it manually.</p>
+<doc-anchor-target id="netscaler">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netscaler">#</doc-anchor-trigger>
+        <span>Netscaler <span class="docs-emoji">&#x2696;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Again the company I was at was using Netscaler and they knew it had API capabilities but didn&#x27;t know how to use them. This was quite mad as we are talking a big company with lots of employees, and lots of different departments with even more people in, people paid to develop solutions yet here I was at 3rd line being asked to automate the processes of several netscaler tasks mainly relating to load-balancing. This allowed me to write a script to reboot 3 critical servers that were constantly having issues on a daily basis to remove some of the errors happening on a daily basis. Again this used to be done by the on-call person at silly-o-clock in the morning or evening. This meant that the person on-call was also getting paid for this time. By implementing this Netscaler API to reboot these servers daily got rid of the constant out of hour calls, which in-turn was saving the company money not having to constantly pay the on-call person over-time.
+As well as focusing on these specific problematic servers, I also created a bespoke GUI application to allow the <strong>developers</strong> to upgrade their own websites which usually was consuming one hour of my day load balancing the webservers to allow them to do the upgrade. I made the GUI so simple to use, and as well as being super easy to use, I also built in a log to record who used it and when (incase something went wrong, or for auditing purposes), as well as preventing the user from making an error, by having advanced coding in the background verifying correct information before letting the user continue. This then meant the developers could do their own upgrades instead of me dedicating time to do something they could easily do if they had a specific application that only allowed them to do what they needed. Again saving time, money and resources.</p>
+<doc-anchor-target id="server-issue">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#server-issue">#</doc-anchor-trigger>
+        <span>Server Issue <span class="docs-emoji">&#x1F632;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>I was speaking to a techinical architect on this server issue. He informed me to fix it you needed to restart a particular service not once but twice to fix the issue. The problem was they didn&#x27;t know when to restart it as the service never stopped running, but the service the server was providing became unreponsive to the end user. The software supplier had confirmed there was a bug in the release we was using and basically to restart the service at a random time in the day to hopefully fix the issue. This was the lamest excuse or fix I had heard in quite sometime. The craxy thing in my head was I was speaking to someone more senior than me and they didn&#x27;t seem to have a scooby-doo on how to fix it. Looking in the applivation event log  (using powershell) I could see a speicific error code happening everytime the service on the server needed restarting twice. So now I had the information I needed, I wrote a script in about 15 minutes to run every few minutes on the server to check the application log, check if this particular error had occured then if it had to restart the particular service twice. Even more suprising was when I had to inform a <strong>developer</strong> how I had <strong>developed</strong> a solution to the software bug until the software supplier could provide a fix. So again by no means my best mission impossible, but just the fact you got senior architects, developers and an entire software company who cannot fix their own software issues. This particular problem was happening numerous times a day and at anytime of the day.  Again by me implementing this script and recording the activity in the eventlog allowed me to inform the <strong>developer</strong> how many times my script had saved the day, and stopped the on-call person getting called at silly-o-clock.  Again saving time and saving money, it&#x27;s just a bit mad that I came up with the solution to the problem in like 15 minutes, when all these other more senior people couldn&#x27;t provide any solution.</p>
+<doc-anchor-target id="citrix">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#citrix">#</doc-anchor-trigger>
+        <span>Citrix <span class="docs-emoji">&#x1F4C0;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Not claiming to be a citrix master by any-means but when a colleague is asking another colleague to literally point and click over a hundred different machines to put them into maintenance mode, this to me is just screaming automation. So although this task didn&#x27;t directly fall to me, just the crazyness of someone asking someone else to help them point and click a load of servers, it just seems so prehistoric to me of doing things that way.  Again I was able to smash a script together to then turn this into a function so you could query one or more ESXI boxes to then put all the virtual servers on that device into maintenance mode so the box could be taken down without any end users suffering loose of data. Again I made another function to then take all the virtual machines out of maintence mode. To me this is just how hours and hours of IT time is wasted, by pointing and clicking. To make it worse it was normally taking two people to complete this task, due to the sheer amount of pointing and clicking. Instead I supplied a couple of Powershell functions that could complete this task in a few mere seconds instead of up to an hour.</p>
+<doc-anchor-target id="sql-dba">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sql-dba">#</doc-anchor-trigger>
+        <span>SQL DBA <span class="docs-emoji">&#x265F;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Dealing with databases does require a lot of attention and detail. I guess that&#x27;s why some people think it would be better to do it manually. Not me, I think of you write a good script properly once, and make that into a function you can then use that on every SQL server going forward. So this particular task was making sure certain jobs were setup and configured on each SQL server. As this was repeating the same process on each SQL box, to me this was needing to be automated, else this was going to take such a long time to complete with the list of servers this needed applying to. Thankfully Powershell has the dbatools module which allows you to automate anyhting you would do in SSMS you can do using the Powershell module. Whilst deploying the function to various SQL servers I discovered a server in urgent need of TLC. This to me was mission impossible as no-one else would have been able to script this task, as the instructions were all manual. To me this was another big winner as saved me so much time in repeating the same processs over and over again, without making human mistakes.</p>
+<doc-anchor-target id="vmware">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vmware">#</doc-anchor-trigger>
+        <span>VMWare <span class="docs-emoji">&#x1F4BF;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>I remember way back when I was working at the council how vitual machines were going to be the future of IT. Sure enough this one company I was at had thousands and thousands of virtual machines. So to me this meant that I needed to be using Powershell instead of VSphere as it would be a lot quicker, as I wouldn&#x27;t need to point and click to find the VM. Using various VM Tools modules I was able to script several documented processes such as increasing disk size of a VM. Each task I automated meant that I no longer had to do this manually, which mean time and money being saved. I ended up writing serveral VMWare scripts to automate the most frequent problems that occured. Again no-one had asked me to do this, but as I was having to do various tasks such as high CPU on numerous virtual machines throughout the day. Instead of manually going through the process of logging onto VSphere, searching for the machine, logging on remotely to the machine and then looking at the problem, by the time I you done all that I had already invoked the function on the machine from my Powershell session and fixed the problem.</p>
+<doc-anchor-target id="iis">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iis">#</doc-anchor-trigger>
+        <span>IIS <span class="docs-emoji">&#x1F578;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Although I am not a dedicated web administrator I do have a good understanding of it, and how to fix various issues that may occur. Especially using a few powershell modules to automate the task. Althogh the IISAdministration module is good for identifying the sites, and application pools remotely. Sometimes the information you need is in the actual IIS log file for that website. This led to me using a Mirosoft tool to parse the log files to find the issue. This got me thinking why had this not been done in Powershell? Not long after a binary module was published which then got me into binary modules. Again I took this a step further by placing all the data into Excel and making pivot-table reports. I was even more shocked when the <strong>developer</strong> said they never check the logs, but from the information I had extracted he could automatically tell why those errors were happening, so was of great use to the developer in the end.
+IIS is great for logging events from the websites it is monitoring, but who is monitoring the logs? This was the case for a lot of webservers I found, that the IIS logs were not being cleaned up. This resulted in one webserver nearly flooding the main operating system drive on a live webserver. This lead to me writing my own function and deploying this through solarwinds to have something in place to monitor all the log files and to make sure that no webserver would have the disk drives flooded by log files.</p>
+<doc-anchor-target id="active-directory">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#active-directory">#</doc-anchor-trigger>
+        <span>Active Directory <span class="docs-emoji">&#x1F9D1;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Having used Active Directory from before I could script has shown me how much time I could have saved. I am more than capable of writing scripts to onboard users from a spreadsheet, or more complex scripts to find the difference in security groups of specific users. As well as updating advanced settings of user accounts, managing user accounts from a security perspective, to finding rogue accounts that should have been deleted or disabled. Using Powershell to accomplish these tasks means I can get the job done much quicker, and making my scripts into advanced functions mean they are much more versatile to either be adapted or re-used. I was able to identify over 400 hundred live accounts that had not been logged onto in over one year, as this employer had over 6,000 accounts. It wasn&#x27;t my specific job to find this information, but this proved to me that this was not being monitored and could lead to massive data breach. I reported my findings to the security team, who I also helped when there was a compromised email account. As I was the only person to identify that they had not disabled outlook web access and this particular user had 8 mobiles registered to their account. By me doing these two things, no further emails were sent from the compromised account. Even though there was a dedicated security team and I heard of this compromised account by chance I was the person to fix the problem.
+I have also designed my own Active Directory dashboards, to monitor various aspects of user accounts and report these using various different components on the dashboard page.</p>
+<doc-anchor-target id="office-365">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#office-365">#</doc-anchor-trigger>
+        <span>Office 365 <span class="docs-emoji">&#x1F3E2;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Even though Office 365 seems to be the normal for most companies these days, it is amazing again when it comes to Administration. As no-one seems to know how to use Powershell to manage your Office 365. So why is this important, well it has happened to me on more than one occasion where Microsoft services are unavailable and you cannot use the Microsoft management portal to manage your Office 365 via point and click in a webpage.
+Managing Office 365 via Powershell was extremely important when I was having to deal with lots and lots of email accounts that had not migrated correctly. When I was shown how the current senior architect was fixing these issues, the demo lasted just over an hour. Then 4 hours later he had actually migrated the mailbox. I even remember my boss at the time writing to the head of IT explaining that the team I was working in did not have enough time to solve all these mailbox migration issues as it took so long to fix even one mailbox manually how we were shown, 4 hours or more. As this particular task did fall to me to fix, there was no-way I had the time to manually fix each of these mailboxes. So I spent 4 hours writing numerous functions to fix each given mailbox problem. I was then able to group the problems and apply the functions to fix those groups of issues. Within a day I had completely cleared this list, that I was expecting to take me weeks or more had I tackled the problem manually. I was also able to document the whole procedure and upload the scripts to the GIT server. This then meant anyone on the team could follow a set process which was taking the fraction of the time it took to solve the problems, from the demo we had of the senior technical architect who was originally doing this. Again this was a massive win for me, as I had also been informed there were 2,000 more mailboxes to migrate, and if they had of carried on manually fixing those issues, it probably would of created a full-time job for someone else to solely deal with. As I had written advanced functions I was able to pipe in as many mailboxes as I needed to fix. Saving lots of time and money.
+There was a major security breach where a particular user had their 2 factor authentication breached, and rogue emails were being sent from this end-user to lots of people within the organisation.</p>
+<doc-anchor-target id="network-slowness">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#network-slowness">#</doc-anchor-trigger>
+        <span>Network slowness <span class="docs-emoji">&#x1F422;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>This particular problem had been originally logged about 2 years before I even joined this company. At least I knew the problem was not my fault. However that wasn&#x27;t an answer to the problem. For this problem I actually used WireShark to solve, which was kind of my motivation for making the TShark Crescendo Powershell module I made. I did a fair amount of video training for Wireshark to feel fully comfortable on running the trace and analysing it. So although I had been told that Wireshark traces had been done before and nothing was found this did not deter me from using it. Prior to using Wireshark I actually used the Sysinternals Process 3Monitor to try and find the culprit. Although I was able to obtain useful information from the tracefile and I could see delays I knew that this was a remote site accessing the data about 8 hops away. As I couldn&#x27;t find the definitive problem in the process monitor trace I turned to Wireshark. The information I obtained from Wireshark gave me such granular information on the application and how it was interacting with the network. I was able to find the delay in the program and what was causing it. Sadly the backend tech for this rather expensive equipment was over 20 years old, running a single threaded application. There was also a known SMB issue with the network card in use, so I was able to swap that for a USB-C external network card. Although this did not completely solve the problem I was able to pinpoint where the latency was happening and prove to improve the latency that they needed the backend to be locally hosted as this going across 8 hops and taking up to 5 seconds to read the file on the server was causing the delay of the spinning circle and not responding on the main application. The backend solution was designed to be hosted locally which it was not, and all the reading and writing of the same file over SMB was causing severe delays.</p>
+<doc-anchor-target id="intune">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#intune">#</doc-anchor-trigger>
+        <span>Intune <span class="docs-emoji">&#x1F39B;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Although I had never used Intune before, but as I understood it essentially just ran Powershell scripts on end-client computers. This particular problem had been open for months and months as no-one at the company knew how to script something in Intune to deploy a specific printer to specific people. I had never deployed a printer automatically using Intune and there were other aspects to take into consideration like getting the driver installed. After a bit of testing I had pacakged a solution and rolled it out. To my delight this external company could finally use the printer.
+The same company had also purchased loads of USB adapters to allow multiple monitors. Again none of these were working as although they were USB, they were not plug and play, and getting hold of the correct driver was a little tricky. Again using Intune I was able to deploy the driver to all the laptops on-site automatically, so that these USB multiple monitor devices would automatically work for end-users. This problem had also been open for a long time without a given solution, hence I think it is worthy of making the mission impossible list as no-one else in the company was cabaple of pulling it off.</p>
+<doc-anchor-target id="datto">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#datto">#</doc-anchor-trigger>
+        <span>Datto <span class="docs-emoji">&#x1F39A;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>One company I was at was expecting me as the sole NOC engineer to go through and fix over 300 calls a day. Yes a day, as well as record all my time for each call I closed. It almost seemed I was spending more time recording my time, than time I could use to focus on problems. Although this company had Datto they didn&#x27;t have anyone in the company capable of writing Powershell scripts to use within Datto to fix the problem. Not long into the job I had written numerous Powershell datto functions I could deploy to the machine with the problem to automatically fix the problem.  This then actually gave me the chance to close up to 300 calls a day, by using scripts to automatically fix the problem. This job seemed mission impossible from the get-go with the sheer volume of calls I was expected to close manually, as well as recording all my time, documenting the scripts I was writing, and writing the scripts and closing the 300+ daily calls. This was only possible through me writing bespoke scripts for each category of the problems I was solving. I was also able to change the automatic fixes they had in-place which were not configured correctly to run the scripts I had written instead. This allowed the call queue to be dramtically reduced, and to almost be in a managable state for one person to deal with. I was initially working over-time for free each evening to even make the volume of calls possible, but once the scripts were in-place, and the Datto system was being used more effectively this enabled me to stop working over-time. I was also able to provide other Datto solutions such as Blue Screen Of Death, to automatically download and install the software required to read the dump file, and display the reason why the blue screen happened on the particular machine.</p>
+<doc-anchor-target id="complaint-system">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#complaint-system">#</doc-anchor-trigger>
+        <span>Complaint System <span class="docs-emoji">&#x1F621;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>At this work place, one of the directors came up to me telling me the company needed a complaint system in order to gain certain certification of providing customer care. He literally scribbled me two whole sentences of this complaint system. These two sentences were not readable at best, and didn&#x27;t take into account any of the front-end design or more importantly back-end design of how all this relational database was going to be built, and the informaiton it would record. So one week later I had designed a back-end relational database to store all the data, and I had created a front-end web dashboard, that had it&#x27;s own security group in active directory so when logging into the complaint system you were authenticated against this active directory security group. I also hosted this as a HTTPS site creating the certificate and rolling this out via GPO. This then allowed the call-handlers in the company to record any given complaint via phone or email, and then assign it to the appropriate manager, and all this informaiton was recorded into the database, so I was also able to generate various graphs and reports from this data. When-ever a complaint was assigned to a manager for further investigation an email would also be sent to notify that manager.</p>
+<doc-anchor-target id="purchase-order-system">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#purchase-order-system">#</doc-anchor-trigger>
+        <span>Purchase Order System <span class="docs-emoji">&#x1F60A;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Normally purchase orders were being recorded on paper, which then sometimes went missing. To my knowledge no-one was collating this information, so there was no-way of knowing which department was spending what, as it was all on bits of paper. Again from having brief discussions with the Finance director I was able to put together a fully relational back-end database, as well as a front-end web-based dashboard application that was again linked to Active Directory hosted on IIS using HTTPS and issuing the correct certificate to end-clients. This then allowed the company to have a complete over-view on all the purchase orders being raised within the company, and no chance of bits of paper going missing. I designed the system with create, read, update and delete in-mind to allow users the opportunity to cancel their purchase order should it no longer be required. I was also able to build in complex business rules to decide automatically who the purchase order should go to based on the information within the purchase order.</p>
+<doc-anchor-target id="vehicle-management-system">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vehicle-management-system">#</doc-anchor-trigger>
+        <span>Vehicle Management System <span class="docs-emoji">&#x1F69A;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>At this particular company they had lots and lots of vehicles. All the milage and repairs and various other bits of data was all held on different spreadsheets located in different directory shares, which various people would update as an when. My mission was to get all this informaiton into one place, so you could manage all vehicle data from one application instead of 20 different spreadsheets. Again I put together a back-end database and a front-end dashboard to display and record all this information. Once I had completed the project and demonstrated it to the end-users there was big delight on the faces, as this meant no longer having to open numerous spreadsheets to record this information</p>
+<doc-anchor-target id="vat">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vat">#</doc-anchor-trigger>
+        <span>VAT <span class="docs-emoji">&#x1F4B8;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Believe it or not one project I was assigned was to find the missing VAT the finance system had not claimed for. Now this particular issue had been going on for about 5+ years, and all the senior people in the company had looked at it, but no-one had been able to solve this issue. After much SQL querying I had found the missing link. I was able to write a complex T-SQL query and then display that data into a table grid in a GUI application I built using Powershell, the outputted table was able to show everything that had been claimed and not claimed.  I conclusively proved these un-claimed VAT were truely unclaimed, by using the SQL queries and the previous sent tax forms. The company was able to claim back just over £100,000 with this information I had provided. I was then able to modify the T-SQL query and the GUI to reflect this year on year going forward. This to me was a massive win as when I initially started this project I knew VAT stood for value added tax and that was about it. Then to conclusively prove what had not been claimed, and the fact the finance software or any add-ons the company was selling for this product couldn&#x27;t do what I had done, this to me was mission impossible accomplished.</p>
+<p><figure class="content-center">
+    <img src="https://adam-bacon.netlify.app/imgs/dm1.png" alt="More stories for bedtime coming soon" />
+    <figcaption class="caption">More stories for bedtime coming soon</figcaption>
+</figure>
+</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">About Me</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../blogupdate/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Blog Update</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "Mission Impossible", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>

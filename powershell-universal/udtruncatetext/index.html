@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.3.0.732137743534">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.3.0">
+
+    <!-- Primary Meta Tags -->
+    <title>UDTruncateText Powershell Universal Component Module &#129424;</title>
+    <meta name="title" content="UDTruncateText Powershell Universal Component Module 🦐">
+    <meta name="description" content="Powershell Universal Component to allow you to select how many lines of text should be displayed, then will provide a link to read the rest of the text in a full article. You can find out the benefits of using this in this blog" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adam-bacon.netlify.app/powershell-universal/udtruncatetext/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-bacon.netlify.app/powershell-universal/udtruncatetext/">
+    <meta property="og:title" content="UDTruncateText Powershell Universal Component Module 🦐">
+    <meta property="og:description" content="Powershell Universal Component to allow you to select how many lines of text should be displayed, then will provide a link to read the rest of the text in a full article. You can find out the benefits of using this in this blog">
+    <meta property="og:image" content="https://adam-bacon.netlify.app/imgs/blog-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adam-bacon.netlify.app/powershell-universal/udtruncatetext/">
+    <meta property="twitter:title" content="UDTruncateText Powershell Universal Component Module 🦐">
+    <meta property="twitter:description" content="Powershell Universal Component to allow you to select how many lines of text should be displayed, then will provide a link to read the rest of the text in a full article. You can find out the benefits of using this in this blog">
+    <meta property="twitter:image" content="https://adam-bacon.netlify.app/imgs/blog-image.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=2.3.0.732137743534" rel="stylesheet" />
+
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=2.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.3.0.732137743534" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">My Powershell Blog</span>
+                            <span class="w-10 ml-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../imgs/powershell.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../imgs/powershelld.png">
+                            </span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="udtruncatetext-powershell-universal-component-module" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#udtruncatetext-powershell-universal-component-module">#</doc-anchor-trigger>
+        <span>UDTruncateText Powershell Universal Component Module <span class="docs-emoji">&#x1F990;</span></span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="https://twitter.com/psdevuk"><img class="object-cover" src="../../imgs/me.jpg"/></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="https://twitter.com/psdevuk">Adam Bacon</a></div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Powershell</div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Modules</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2022-09-14</span></div>
+</div>
+
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link To Download UDTruncateText Module</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.powershellgallery.com/packages/UDTruncateText/1.0.0</span>
+    </div>
+    <a href="https://www.powershellgallery.com/packages/UDTruncateText/1.0.0" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">GitHub Link to this UDTruncateText Repository</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/psDevUK/UDTruncateText</span>
+    </div>
+    <a href="https://github.com/psDevUK/UDTruncateText" class="absolute block inset-0"></a>
+</div>
+</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Without using UDTruncateText</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Using UDTruncateText</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p><figure class="content-center">
+    <img src="../imgs/tt2.png" alt="Maybe you have a lot of text and not enough space" />
+    <figcaption class="caption">Maybe you have a lot of text and not enough space</figcaption>
+</figure>
+</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p><figure class="content-center">
+    <img src="../imgs/tt1.png" alt="Truncating the text to give the less is more approach" />
+    <figcaption class="caption">Truncating the text to give the less is more approach</figcaption>
+</figure>
+</p>
+    </div>
+</div>
+<doc-anchor-target id="demo-dashboard">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#demo-dashboard">#</doc-anchor-trigger>
+        <span>Demo Dashboard <span class="docs-emoji">&#x1F92A;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>A real quick and easy dashboard to demonstrate the power behind this component.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">New-UDDashboard -Title 'UDTruncateText' -Content {
+New-UDRow -Columns {
+  New-UDColumn -Content {
+New-UDTruncateText -HyperLink &quot;https://adam-bacon.netlify.app/recent-modules/udtextfit/&quot; -Lines 2 -ReadOn &quot;Read More Here&quot; -Text &quot;So this is a super important bit of text you need to read, but do not want to ramble on too long so have a link to encourage the user to read the main article&quot;
+  } -LargeSize 4 -MediumSize 4 -SmallSize 4
+}
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="the-project">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-project">#</doc-anchor-trigger>
+        <span>The Project <span class="docs-emoji">&#x1F3D7;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Okay so I know if you are a web-designer or know your HTML and JavaScript well enough you could probably just hard-code the solution. However I am just a guy who loves to use Powershell to make things work, and try to provide an easier solution to the given problem.</p>
+<p>What was the problem? Me, yes that is right the problem was me. I was looking for another component to build, one that did not exist already in the eco-system. It is getting tough to find a useful component that I have not already built or is not included in the product by default. However I saw this component and thought <span class="docs-emoji">&#x1F4A1;</span> this would be a great idea to build this as a custom React component for Powershell Universal.</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Orginal React Component Here</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.npmjs.com/package/react-text-truncate</span>
+    </div>
+    <a href="https://www.npmjs.com/package/react-text-truncate" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Demo of the original component</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>http://shinychang.github.io/React-Text-Truncate/</span>
+    </div>
+    <a href="http://shinychang.github.io/React-Text-Truncate/" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="using-new-site-to-find-components">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-new-site-to-find-components">#</doc-anchor-trigger>
+        <span>Using New Site To Find Components <span class="docs-emoji">&#x1F4F0;</span></span>
+    </h2>
+</doc-anchor-target>
+<p><strong>IF YOU READ THE LAST ARTICLE YOU CAN SKIP THIS PARAGRAPH</strong></p>
+<p>Yep so even though I am providing the link to the official react component above which is pointing to npmjs.com it seems for some reason when I am searching on npmjs.com I get limited to 20 results no matter what. Like I used to get back thousands of results, and scroll through pages and pages of components till I found the one I was looking for. I even signed up to <strong>npmjs</strong> thinking maybe you now need to be a member to get back all the results, but I was still only getting 20 results back.</p>
+<p>Thankfully the internet has more than just one webpage to find react components, and I then landed on:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">I am now using yarnpkg to find React components</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://yarnpkg.com/</span>
+    </div>
+    <a href="https://yarnpkg.com/" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Which was bringing back the number of results I used to get on npmjs and it even gave me the link to the npmjs package page.</p>
+<p>So I know this is not the most super-fancy react component but as mentioned I could really see this being useful if you have a super busy dashboard with so much information to display to the user, so instead of giving the end-user a brain-overload.  Why not present just enough information to the end-user then let them decide if they wish to read the full article associated with the truncated text.</p>
+<doc-anchor-target id="component-jsx-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#component-jsx-file">#</doc-anchor-trigger>
+        <span>Component JSX File <span class="docs-emoji">&#x1F5C3;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>So there are a fair few good files you need to edit in some shape or form to build a component, I think it would be a good idea for me to document this process to show how simple it really is. Before I could edit this JSX file within the <strong>components</strong> folder I needed to make sure I had installed the <strong>npm pacakge for this react component</strong> as I saw this needed more than one dependency I used the following website to detect all the dependencies to save me clicking</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Find Dependencies Easily</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://npm.anvaka.com/</span>
+    </div>
+    <a href="https://npm.anvaka.com/" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>I then copied this list into notepad then ran this one line to install all these dependencies</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">gc C:\Builds\dependencies.txt | % {npm i $_ --legacy-peer-deps}</code></pre>
+</doc-codeblock></div>
+<p>So once these were installed, and I had renamed the <strong>.PSD1 and .PSM1</strong> file to the module name I wanted. I then edited the <strong>.PSD1 file to include the RootModule as the newly named .PSM1 file</strong>, I edited the <strong>component.build.ps1 file to copy the newly named modules</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">	Copy-Item $PSScriptRoot\UDTruncateText.psd1 $OutputPath
+	Copy-Item $PSScriptRoot\UDTruncateText.psm1 $OutputPath</code></pre>
+</doc-codeblock></div>
+<p>also edited line 20 in the <strong>webpack.config.js</strong> file to be</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">library: 'udtruncatetext'</code></pre>
+</doc-codeblock></div>
+<p>Within the <strong>components</strong> folder there is an <strong>index.js</strong> file my edited file looked like</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">import UDTruncateText from './component';
+UniversalDashboard.register(&quot;udtruncatetext&quot;, UDTruncateText);</code></pre>
+</doc-codeblock></div>
+<p>Please <strong>keep case-sensitive lower-case for the webpack.config.js file</strong> which then reflects what is typed as first arguement within the <strong>parenthesis</strong> as shown above. Once you have made all these edits to the existing template files, and installed the npm package and all dependencies (in this case I only had two packages to install as only one dependency) it is time to construct the actual component that will be displayed on the dashboard. This is done by editing the <strong>component.jsx file witin the components folder within the github template you downloaded</strong>. This is my final edited component.jsx file:-</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">import React from 'react';
+import { withComponentFeatures } from 'universal-dashboard';
+import TextTruncate from 'react-text-truncate';
+
+const UDTruncateText = props =&gt; {
+  return (
+    &lt;TextTruncate
+    key={props.id}
+    line={props.line}
+    element=&quot;span&quot;
+    truncateText={props.truncateText}
+    text={props.text}
+    textTruncateChild={&lt;a href={props.href}&gt;{props.readon}&lt;/a&gt;}
+/&gt;
+  );
+  }
+
+export default withComponentFeatures(UDTruncateText)</code></pre>
+</doc-codeblock></div>
+<p>So VSCode was not complaining about any of the code above, so now I needed to edit the <strong>.PSM1 and .PSD1 file to finish this component off before running invoke-build</strong> so this is my final <strong>PSD1 file</strong> below</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">#
+# Module manifest for module 'UDTruncateText'
+#
+# Generated by: psdevuk
+#
+# Generated on: 12/09/2022
+#
+
+@{
+
+# Script module or binary module file associated with this manifest.
+RootModule = 'UDTruncateText.psm1'
+
+# Version number of this module.
+ModuleVersion = '1.0.0'
+
+# Supported PSEditions
+# CompatiblePSEditions = @()
+
+# ID used to uniquely identify this module
+GUID = '76de2c49-86a9-4b58-9247-edbe35fed09a'
+
+# Author of this module
+Author = 'psdevuk'
+
+# Company or vendor of this module
+CompanyName = 'Home'
+
+# Copyright statement for this module
+Copyright = '(c) Adam. All rights reserved.'
+
+# Description of the functionality provided by this module
+ Description = 'Gives the ability to truncate the amount of text shown, and provide a hyperlink to read the rest of the information'
+
+# Minimum version of the PowerShell engine required by this module
+# PowerShellVersion = ''
+
+# Name of the PowerShell host required by this module
+# PowerShellHostName = ''
+
+# Minimum version of the PowerShell host required by this module
+# PowerShellHostVersion = ''
+
+# Minimum version of Microsoft .NET Framework required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
+# DotNetFrameworkVersion = ''
+
+# Minimum version of the common language runtime (CLR) required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
+# ClrVersion = ''
+
+# Processor architecture (None, X86, Amd64) required by this module
+# ProcessorArchitecture = ''
+
+# Modules that must be imported into the global environment prior to importing this module
+# RequiredModules = @()
+
+# Assemblies that must be loaded prior to importing this module
+# RequiredAssemblies = @()
+
+# Script files (.ps1) that are run in the caller's environment prior to importing this module.
+# ScriptsToProcess = @()
+
+# Type files (.ps1xml) to be loaded when importing this module
+# TypesToProcess = @()
+
+# Format files (.ps1xml) to be loaded when importing this module
+# FormatsToProcess = @()
+
+# Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
+# NestedModules = @()
+
+# Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
+FunctionsToExport = 'New-UDTruncateText'
+
+# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
+CmdletsToExport = '*'
+
+# Variables to export from this module
+VariablesToExport = '*'
+
+# Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
+AliasesToExport = '*'
+
+# DSC resources to export from this module
+# DscResourcesToExport = @()
+
+# List of all modules packaged with this module
+# ModuleList = @()
+
+# List of all files packaged with this module
+# FileList = @()
+
+# Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
+PrivateData = @{
+
+    PSData = @{
+
+        # Tags applied to this module. These help with module discovery in online galleries.
+         Tags = @('ud-component','text','formatting')
+
+        # A URL to the license for this module.
+        # LicenseUri = ''
+
+        # A URL to the main website for this project.
+         ProjectUri = 'https://github.com/psDevUK/UDTruncateText'
+
+        # A URL to an icon representing this module.
+         IconUri = 'https://c.tenor.com/WMFB1K1DFA4AAAAd/information-overload-mind-blown.gif'
+
+        # ReleaseNotes of this module
+        # ReleaseNotes = ''
+
+        # Prerelease string of this module
+        # Prerelease = ''
+
+        # Flag to indicate whether the module requires explicit user acceptance for install/update/save
+        # RequireLicenseAcceptance = $false
+
+        # External dependent modules of this module
+        # ExternalModuleDependencies = @()
+
+    } # End of PSData hashtable
+
+} # End of PrivateData hashtable
+
+# HelpInfo URI of this module
+# HelpInfoURI = ''
+
+# Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
+# DefaultCommandPrefix = ''
+
+}</code></pre>
+</doc-codeblock></div>
+<p>To make the actual <strong>cmdlet behind this component you need to edit the pre-defined function in the .PSM1 file</strong> so this is my finished <strong>.PSM1 before running the invoke-build</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">$IndexJs = Get-ChildItem &quot;$PSScriptRoot\index.*.bundle.js&quot;
+$AssetId = [UniversalDashboard.Services.AssetService]::Instance.RegisterAsset($IndexJs.FullName)
+
+function New-UDTruncateText {
+    &lt;#
+    .SYNOPSIS
+    Gives the ability to decide how much text to display
+    
+    .DESCRIPTION
+    Allows you to decide how many lines of text you wish to display then provide a hyperlink for the end-user to carry on reading the article
+    
+    .PARAMETER Id
+    The ID of this editor
+
+    .PARAMETER Hyperlink
+    Set the hyperlink to point to the main article
+
+    .PARAMETER Lines 
+    Set the number of lines you want to return to the end user before the text is truncated
+
+    .PARAMETER TruncateText
+    Displays the truncation text which is defaulted to ...
+
+    .PARAMETER ReadOn
+    Text for the hyperlink at the end of the truncation defaulted to Read On
+
+    .PARAMETER Text
+    Text for the component
+
+    .EXAMPLE
+    New-UDTruncateText -HyperLink &quot;https://adam-bacon.netlify.app/recent-modules/udtextfit/&quot; -Lines 2 -ReadOn &quot;Read More Here&quot; -Text &quot;So this is a super important bit of text you need to read, but do not want to ramble on too long so have a link to encourage the user to read the main article&quot;
+    #&gt;
+    
+    param(
+        [Parameter()]
+        [string]$Id = (New-Guid).ToString(),
+        [Parameter()]
+        [int]$Lines,
+        [Parameter()]
+        [string]$Text,
+        [Parameter()]
+        [string]$TruncateText = &quot;...&quot;,
+        [Parameter()]
+        [string]$HyperLink,
+        [Parameter()]
+        [string]$ReadOn = &quot;Read On&quot;
+    )
+
+    End {
+        @{
+            assetId = $AssetId 
+            isPlugin = $true 
+            type = &quot;udtruncatetext&quot;
+            id = $Id
+
+            line = $Lines
+            truncateText = $TruncateText
+            text = $Text
+            href = $HyperLink
+            readon = $ReadOn
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="ready-steady-go">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ready-steady-go">#</doc-anchor-trigger>
+        <span>Ready, Steady, Go! <span class="docs-emoji">&#x1F6A6;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>So once you have followed the above, you are now ready to run:-</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">invoke-build</code></pre>
+</doc-codeblock></div>
+<p><strong>As long as you read the official documentation on building a custom component you would have already downloaded all the prerequisite modules and software required to build custom components</strong>. <strong>I did find I needed to also install the psake module as well</strong>. This process literally took 10 seconds or less. As long as you do not get any errors, and the process completes then within the <strong>output directory</strong> you will have you brand-new custom component you built.</p>
+<p>I restarted the <strong>PowershellUniversal service</strong> then logged into the main portal. Verified the module was being picked up by the software, by searching the available modules within the program. Once I verified my new module was included, I then did a test on the dashboard.</p>
+<p>I now had a fully working react custom component loaded into the Powershell Universal dashboard I had created. I then verified all the parameters worked, which they did then it was time to publish this module to the Powershell Gallery. Please note to include <strong>ud-component</strong> within the module tags to enable your custom component to be found on the market place exclusive to this product.</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link to this module on marketplace</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://marketplace.universaldashboard.io/Dashboard/UDTruncateText</span>
+    </div>
+    <a href="https://marketplace.universaldashboard.io/Dashboard/UDTruncateText" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="that-is-how-this-powershell-module-was-done-till-next-time-take-care">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#that-is-how-this-powershell-module-was-done-till-next-time-take-care">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A5;</span> That is how this Powershell module was done. Till next time, take care</span>
+    </h2>
+</doc-anchor-target>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udtextfit/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">UD​Text​Fit</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udcolorful/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">UD​Colorful</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "UDTruncateText", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>

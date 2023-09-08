@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.3.0.732137743534">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.3.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Crescendo</title>
+    <meta name="title" content="Crescendo">
+    <meta name="description" content="Powershell blog made for the Southampton Powershell Group talk, explaining how to get started with Cresecendo, what Crescendo is, how to use it, and even videos from the man himself Jason Helmick" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adam-bacon.netlify.app/presentations/crescendo/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-bacon.netlify.app/presentations/crescendo/">
+    <meta property="og:title" content="Crescendo">
+    <meta property="og:description" content="Powershell blog made for the Southampton Powershell Group talk, explaining how to get started with Cresecendo, what Crescendo is, how to use it, and even videos from the man himself Jason Helmick">
+    <meta property="og:image" content="https://adam-bacon.netlify.app/imgs/dm1.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adam-bacon.netlify.app/presentations/crescendo/">
+    <meta property="twitter:title" content="Crescendo">
+    <meta property="twitter:description" content="Powershell blog made for the Southampton Powershell Group talk, explaining how to get started with Cresecendo, what Crescendo is, how to use it, and even videos from the man himself Jason Helmick">
+    <meta property="twitter:image" content="https://adam-bacon.netlify.app/imgs/dm1.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=2.3.0.732137743534" rel="stylesheet" />
+
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=2.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">My Powershell Blog</span>
+                            <span class="w-10 ml-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../imgs/powershell.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../imgs/powershelld.png">
+                            </span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="crescendo" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#crescendo">#</doc-anchor-trigger>
+        <span>Crescendo</span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="https://twitter.com/psdevuk"><img class="object-cover" src="../../imgs/me.jpg"/></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="https://twitter.com/psdevuk">Adam Bacon</a></div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Microsoft</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2022-08-27</span></div>
+</div>
+
+<p><figure class="content-center">
+    <img src="../imgs/fl1.png" alt="I felt like I was in dream-land having a chat with Jason and Jim" />
+    <figcaption class="caption">I felt like I was in dream-land having a chat with Jason and Jim</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="crescendo">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#crescendo">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4E2;</span> Crescendo</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>krə-shĕn′dō is how this word is pronounced just to be clear from the get go</p>
+        </div>
+    </div>
+</div>
+<p>When I look at the above <code v-pre>krə-shĕn′dō</code> it makes me think of a special move you could do on Street Fighter 2. Something like <code v-pre>krə-shĕn′dō Kick</code> looking up this word I find:-</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Crescendo is a noun</h5>
+<ol>
+<li><p>A gradual increase in the volume or intensity of sound in a passage.</p>
+</li>
+<li><p>A passage played with a gradual increase in volume or intensity.</p>
+</li>
+<li><p>A steady increase in intensity or force.</p>
+</li>
+</ol>
+        </div>
+    </div>
+</div>
+<p>So the one chance I had to ask the brains behind this, aka either Jason or Jim about why they called it Crescendo I totally fluffed and didn&#x27;t ask. Which would be a perfect reason to have another chat with the delightful Jason Helmick and Jim Truher. Jim Truher has been on the Powershell team since Jeffery Snover v1 days!  So to be speaking to such a key player in the Powershell world this was crazy.  Then Jason Helmick the Powershell PM on the Powershell team, like damn did I hit the jackpot? I was gutted that I had some technical issues which prevented my camera working, but damn I wanted a screen shot for proof I really did talk to these two guys. So just believe me it really did happen. Honest!</p>
+<p>Why on earth would Microsoft want to talk to a little tiny fish in the sea like me? Well sadly it wasn&#x27;t to offer me an amazing work from home job to create weird and wonderful modules (drats) it was to talk about <strong>Crescendo</strong>. Still despite no job offer, (which there never was I just made this up) I was still over the moon to be speaking to these guys about this <strong>totally awesome Crescendo Module</strong></p>
+<p>Lets cover what <strong>Crescendo</strong> is and why you as someone who obviously it into Information Technology and use Powershell to do some or all of your job. Well Ladies and Gentlemen...Crescendo in a nutshell allows you to make any <strong>command line executable</strong> into a Powershell Module to share with the masses.  Hmmm I hear you ask, <strong>but why would I want to do that when I can already run a non-powershell command-line-executable from a Powershell script anyways</strong> yes dear reader, you are correct you could invoke a native <strong>CLI</strong> from a script, but can you then easily access the output of that using the Powershell pipeline? The output is most likely <strong>plain string data that is returned not an actual object you could inspect</strong> so Crescendo bridges that gap and has the capability of making the output into objects.</p>
+<p>Official documentation on what Crescendo is if you do not believe me, or if what I wrote doesn&#x27;t make sense to you:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2"><span class="docs-emoji">&#x1F4E2;</span> Official documentation:-</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://docs.microsoft.com/en-us/powershell/utility-modules/crescendo/overview?source=recommendations&amp;view=ps-modules</span>
+    </div>
+    <a href="https://docs.microsoft.com/en-us/powershell/utility-modules/crescendo/overview?source=recommendations&view=ps-modules" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="what-got-me-into-crescendo">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-got-me-into-crescendo">#</doc-anchor-trigger>
+        <span>What got me into Crescendo? <span class="docs-emoji">&#x1F913;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>So I am really lucky not to have just got to speak to Jason and Jim, but over the years I have spoken to a fair amount of MVP people. Trust people there is a reason Microsoft gives the people they give an MVP. They are genuinely great people who do amazing work. Anyways I saw this tweet from Adam Driscoll about this Sysinternals Module he had done using Crescendo. I know all about the Sysinternals tools and one of the particular tools he did <strong>handles</strong> I was recently using to un-stick the not responding Powershell ISE sessions I was having when trying to cancel code from running. So I looked at the Github repo then was shocked when I read a few lines basically explaining how he did the module and how you could add to it. <strong>I felt like a kind in a candy shop</strong> all the <strong>CLI</strong> programs I was thinking about that I too could now make Crescendo modules out of. <strong>Boom</strong> that alone was enough to sell this to me on a plate. Right so step one for me, was I needed to <strong>install Powershell 7 to be able to install the Crescendo module</strong> yep I was still running Powershell v5 as it did everything I needed <strong>until now</strong>.</p>
+<p>I guess as I explained I felt like a kid in a candy shop, and I just wanted to eat those sweets, when in hind-sight I should have read the instructions, as although I was able to build these Crescendo modules very easily using the Github repo template Mr Driscoll had kindly provided, I did not know about Crescendo other than it could make the magic of making this old-skool <strong>CLI</strong> or even nu-skool <strong>CLI</strong> run as if it was a native Powershell cmdlet or function.</p>
+<p>Let us demystify what Crescendo does and does not magically do, as I know from personal experiance you try to find this information there is either a lot to read, or a lot to watch. I want to stream-line the goodness into your brain, so please keep reading.</p>
+<p><figure class="content-center">
+    <img src="../imgs/fl2.png" alt="Just hope Jason and Jim did not regret the call" />
+    <figcaption class="caption">Just hope Jason and Jim did not regret the call</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="demystify-crescendo">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#demystify-crescendo">#</doc-anchor-trigger>
+        <span>Demystify Crescendo <span class="docs-emoji">&#x1F9D0;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>I felt I was late to this party, as Crescendo has been about for a little while now, and I had only just discovered it, via a tweet, which I am super glad I read. However I did not build my Crescendo modules using the proper method and this although got me into Crescendo I didn&#x27;t fully appreciate what it is actually doing, or how to properly use it.</p>
+<p>Do you want the good news or the bad news?</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Bad News</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Good News</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>It is not real magic, there is no magic involved</p>
+<p>It will not automatically generate all the parameters from the chosen executable you wish to covert</p>
+<p>It will not automatically make the output into an object output for Powershell</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>It is not complicated to understand</p>
+<p>It will automatically build a very complicated PSM1 file for you</p>
+<p>Editing the JSON file is very easy and has built in intellisense.</p>
+    </div>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>What is a JSON json.org</h5>
+<p>JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays. It is a common data format with diverse uses in electronic data interchange, including that of web applications with servers</p>
+        </div>
+    </div>
+</div>
+<p><strong>Using the JSON file is not difficult and will help populate the end module with the attribute-value pairs specified.</strong></p>
+<p><strong>Trust this will all become clear shortly if this is your first glance at Crescendo, I just do not want to mention JSON later on and you be like what the heck is JSON</strong></p>
+<p><strong>Why does Crescendo not make every CLI into objects then?</strong> Well dear reader, Crescendo can only make the CLI into outputted Powershell objects if the original CLI you are wrapping supports some sort of output other than just text. Newer CLI do maily support <strong>JSON</strong> output or others may support <strong>CSV</strong> output. <strong>So for me this was something I didn&#x27;t grasp at the start</strong>. For instance the Robocopy module I made, robocopy being a really old CLI does not support JSON or CSV output, so I cannot make the returned data from this into Powershell objects, so you can view the properties or methods of particular objects. It is just string data.  <strong>So why bother doing that one then?</strong> Simple it is written in the blog I done, but these old-skool CLI had very interesting parameters that didn&#x27;t make sense unless I read the help for each one. So for me just to be able to give simple param names is enough, and to remind all the young-ones out there that these old but quality CLI can still come in use, just a case of knowing if they exist.</p>
+<p>Think about it folks, I am not just talking Windows built in CLI you could convert. How about anyone of these CLI you could make into a Crescendo module <strong>Azure cli, AWS cli, Docker cli, Kubernetes cli, Microsoft PowerApps cli, Jenkins cli, Github cli, vSphere cli</strong>...the list just goes on and on. All these different CLIs that exist out there all doing different things, but we could bring all this goodness to the Powershell gallery by making these into Crescendo modules. Which then means if any of the above mentioned have quirky parameter sets you could make the CLI a lot easier for everyone else by making decent easy to understand parameters. Secondly as most of these are modern CLI then they should support outputting the format into something like JSON or CSV to then allow Crescendo to make this into proper objects when you query the CLI you are converting. <strong>Please note there is like one-line of code you have to add in the JSON file for this magic to happen.</strong></p>
+<p>Yes you will have to manually construct all the parameters you want to use from the original CLI into the JSON file. Crescendo will not magically go ah I see it has all these params I will automatically insert these into the JSON file. However that being said, once you right your first parameter, you can pretty much copy and paste that small code block to use for the rest of the parameters you wish to include.</p>
+<doc-anchor-target id="in-a-nutshell">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#in-a-nutshell">#</doc-anchor-trigger>
+        <span>In a nutshell <span class="docs-emoji">&#x1F95C;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>So I created a folder named <strong>SpeedTest-CLI</strong> within that folder I created the following <strong>.PS1</strong> file, to be able to create the JSON file which you will need to edit.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Import-Module Microsoft.Powershell.Crescendo
+$NewConfiguration = @{
+    '$schema' = 'https://aka.ms/PowerShell/Crescendo/Schemas/2021-11'
+    Commands  = @()
+}
+$parameters = @{
+    Verb         = 'Initialize'
+    Noun         = 'SpeedTest'
+    OriginalName = &quot;librespeed-cli.exe&quot;
+}
+$NewConfiguration.Commands += New-CrescendoCommand @parameters
+$NewConfiguration | ConvertTo-Json -Depth 3 | Out-File .\SpeedTest.json</code></pre>
+</doc-codeblock></div>
+<p>JSON file that this generated by the above command. Don&#x27;t worry this can be trimmed down.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{
+  &quot;$schema&quot;: &quot;https://aka.ms/PowerShell/Crescendo/Schemas/2021-11&quot;,
+  &quot;Commands&quot;: [
+    {
+      &quot;Verb&quot;: &quot;Initialize&quot;,
+      &quot;Noun&quot;: &quot;SpeedTest&quot;,
+      &quot;OriginalName&quot;: &quot;librespeed-cli.exe&quot;,
+      &quot;OriginalCommandElements&quot;: null,
+      &quot;Platform&quot;: [
+        &quot;Windows&quot;,
+        &quot;Linux&quot;,
+        &quot;MacOS&quot;
+      ],
+      &quot;Elevation&quot;: null,
+      &quot;Aliases&quot;: null,
+      &quot;DefaultParameterSetName&quot;: null,
+      &quot;SupportsShouldProcess&quot;: false,
+      &quot;ConfirmImpact&quot;: null,
+      &quot;SupportsTransactions&quot;: false,
+      &quot;NoInvocation&quot;: false,
+      &quot;Description&quot;: null,
+      &quot;Usage&quot;: null,
+      &quot;Parameters&quot;: [],
+      &quot;Examples&quot;: [],
+      &quot;OriginalText&quot;: null,
+      &quot;HelpLinks&quot;: null,
+      &quot;OutputHandlers&quot;: null
+    }
+  ]
+}</code></pre>
+</doc-codeblock></div>
+<p>Trim the JSON file down a bit to make it less daunting to start modifying it, see much better.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{
+  &quot;$schema&quot;: &quot;https://aka.ms/PowerShell/Crescendo/Schemas/2021-11&quot;,
+  &quot;Commands&quot;: [
+    {
+      &quot;Verb&quot;: &quot;Initialize&quot;,
+      &quot;Noun&quot;: &quot;SpeedTest&quot;,
+      &quot;OriginalName&quot;: &quot;librespeed-cli.exe&quot;,
+      &quot;OriginalCommandElements&quot;: null,
+      &quot;Platform&quot;: [&quot;Windows&quot;],
+      &quot;Description&quot;: null,
+      &quot;Parameters&quot;: [],
+      &quot;OutputHandlers&quot;: null
+    }
+  ]
+}</code></pre>
+</doc-codeblock></div>
+<p>Now I added the <code v-pre>--json</code> into <strong>OriginalCommandElements</strong> to make this parameter automatically run each time the command is run. Then I gave it a <strong>Description</strong>, after that I added the parameters, then most importantly as I wanted objects, and this was using JSON output, I used one line of code into the <strong>OutputHandlers</strong> to make it a true Powershell object the data this CLI returned. Below is the final JSON file finished.  I just wanted to show you the steps on this JSON file as this is a critical process to understand to actually make the end module.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{
+  &quot;Commands&quot;: [
+    {
+      &quot;Verb&quot;: &quot;Initialize&quot;,
+      &quot;Noun&quot;: &quot;SpeedTest&quot;,
+      &quot;OriginalName&quot;: &quot;.\\librespeed-cli.exe&quot;,
+      &quot;OriginalCommandElements&quot;: [&quot;--json&quot;],
+      &quot;Platform&quot;: [
+        &quot;Windows&quot;
+      ],
+      &quot;Description&quot;: &quot;Performs an internet speed test&quot;,
+      &quot;Parameters&quot;: [
+        {
+            &quot;ParameterType&quot;: &quot;switch&quot;,
+            &quot;OriginalName&quot;  : &quot;--ipv4&quot;,
+            &quot;OriginalPosition&quot;: 0,
+            &quot;Name&quot;          : &quot;IPv4Only&quot;
+        },
+        {
+            &quot;ParameterType&quot;: &quot;switch&quot;,
+            &quot;OriginalName&quot;  : &quot;--ipv6&quot;,
+            &quot;OriginalPosition&quot;: 1,
+            &quot;Name&quot;          : &quot;IPv6Only&quot;
+        },
+        {
+            &quot;ParameterType&quot;: &quot;switch&quot;,
+            &quot;OriginalName&quot;  : &quot;--no-download&quot;,
+            &quot;OriginalPosition&quot;: 2,
+            &quot;Name&quot;          : &quot;NoDownload&quot;
+        },
+        {
+            &quot;ParameterType&quot;: &quot;switch&quot;,
+            &quot;OriginalName&quot;  : &quot;--no-upload&quot;,
+            &quot;OriginalPosition&quot;: 3,
+            &quot;Name&quot;          : &quot;NoUpload&quot;
+        },
+        {
+            &quot;ParameterType&quot;: &quot;switch&quot;,
+            &quot;OriginalName&quot;  : &quot;--list&quot;,
+            &quot;OriginalPosition&quot;: 5,
+            &quot;Name&quot;          : &quot;ListServers&quot;
+        },
+        {
+            &quot;ParameterType&quot;: &quot;int&quot;,
+            &quot;OriginalName&quot;  : &quot;--server&quot;,
+            &quot;OriginalPosition&quot;: 6,
+            &quot;Name&quot;          : &quot;Server&quot;
+        }
+      ],
+      &quot;OutputHandlers&quot;: [
+        {
+          &quot;Handler&quot;: &quot;$args[0] | ConvertFrom-Json -ErrorAction SilentlyContinue | Add-Member -TypeName SpeedTest -passthru&quot;,
+          &quot;HandlerType&quot;: &quot;Inline&quot;,
+          &quot;ParameterSetName&quot;: &quot;Default&quot;,
+          &quot;StreamOutput&quot;: false
+        }
+      ]
+    }
+  ],
+  &quot;$schema&quot;: &quot;https://aka.ms/PowerShell/Crescendo/Schemas/2021-11&quot;
+}</code></pre>
+</doc-codeblock></div>
+<p>So the big-takeaway lessons to be learnt, is the below code does the intellisense within VSCode</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">'$schema' = 'https://aka.ms/PowerShell/Crescendo/Schemas/2021-11'</code></pre>
+</doc-codeblock></div>
+<p>also this original executable I wanted to convert aka <strong>librespeed-cli.exe</strong> did indeed support JSON output format. I found this out by actually looking at the help for this executable, which showed it supported both CSV and JSON</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">   --csv                          Suppress verbose output, only show basic information in CSV
+                                  format. Speeds listed in bit/s and not affected by --bytes
+                                   (default: false)
+   --csv-delimiter CSV_DELIMITER  Single character delimiter (CSV_DELIMITER) to use in
+                                  CSV output. (default: &quot;,&quot;)
+   --csv-header                   Print CSV headers (default: false)
+   --json                         Suppress verbose output, only show basic information
+                                  in JSON format. Speeds listed in bit/s and not
+                                  affected by --bytes (default: false)</code></pre>
+</doc-codeblock></div>
+<p>I needed this original CLI to always include the <code v-pre>--json</code> parameter everytime it was run, which in-turn I could then use as Powershell objects in the module</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;OriginalCommandElements&quot;: [&quot;--json&quot;],</code></pre>
+</doc-codeblock></div>
+<p>By using the above tiny bit of code in the JSON file now means whenever you run this within Powershell it will always use this parameter.  This will allow it to return proper objects, we just need to do one last thing for this to actually work by using the following line of code in the JSON file:-</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;Handler&quot;: &quot;$args[0] | ConvertFrom-Json -ErrorAction SilentlyContinue | Add-Member -TypeName SpeedTest -passthru&quot;</code></pre>
+</doc-codeblock></div>
+<p>Boom. Without that line of code specified, the magic of making this CLI into a Powershell Object to allow you to use the pipline, would not have happened.</p>
+<p>Do not worry readers you only need one Crescendo cmdlet to export this into a magically generated module file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Export-CrescendoModule -ConfigurationFile .\SpeedTest.json -ModuleName SpeedTest-CLI -Force</code></pre>
+</doc-codeblock></div>
+<p>As me and Jason are good mates now I strongly recommend you watch his videos which explain this in better detail than I wrote here.</p>
+<doc-anchor-target id="videos-to-watch">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#videos-to-watch">#</doc-anchor-trigger>
+        <span>Videos To Watch <span class="docs-emoji">&#x1F39E;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Seriously check out the videos below to let Jason ease you into Crescendo</p>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="https://www.youtube.com/embed/AGEDvpja_GA" allowfullscreen></iframe>
+    </div>
+</figure>
+</p>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="https://www.youtube.com/embed/e75OTQGFXAM" allowfullscreen></iframe>
+    </div>
+</figure>
+</p>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="https://www.youtube.com/embed/nDm-Hf8GKbw" allowfullscreen></iframe>
+    </div>
+</figure>
+</p>
+<doc-anchor-target id="magical-psm1-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#magical-psm1-file">#</doc-anchor-trigger>
+        <span>Magical PSM1 file <span class="docs-emoji">&#x1F9D9;&#x200D;&#x2642;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Why is this so magical? Well reader it is because Crescendo automatically did this for me using that end JSON file.  Check out all this code</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none"># Module created by Microsoft.PowerShell.Crescendo
+class PowerShellCustomFunctionAttribute : System.Attribute { 
+    [bool]$RequiresElevation
+    [string]$Source
+    PowerShellCustomFunctionAttribute() { $this.RequiresElevation = $false; $this.Source = &quot;Microsoft.PowerShell.Crescendo&quot; }
+    PowerShellCustomFunctionAttribute([bool]$rElevation) {
+        $this.RequiresElevation = $rElevation
+        $this.Source = &quot;Microsoft.PowerShell.Crescendo&quot;
+    }
+}
+
+
+
+function Initialize-SpeedTest
+{
+[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
+[CmdletBinding()]
+
+param(
+[Parameter()]
+[switch]$IPv4Only,
+[Parameter()]
+[switch]$IPv6Only,
+[Parameter()]
+[switch]$NoDownload,
+[Parameter()]
+[switch]$NoUpload,
+[Parameter()]
+[switch]$ListServers,
+[Parameter()]
+[int]$Server
+    )
+
+BEGIN {
+    $__PARAMETERMAP = @{
+         IPv4Only = @{
+               OriginalName = '--ipv4'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               }
+         IPv6Only = @{
+               OriginalName = '--ipv6'
+               OriginalPosition = '1'
+               Position = '2147483647'
+               ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               }
+         NoDownload = @{
+               OriginalName = '--no-download'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               }
+         NoUpload = @{
+               OriginalName = '--no-upload'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               }
+         ListServers = @{
+               OriginalName = '--list'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               }
+         Server = @{
+               OriginalName = '--server'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'int'
+               ApplyToExecutable = $False
+               NoGap = $False
+               }
+    }
+
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $False; Handler = { $args[0] | ConvertFrom-Json -ErrorAction SilentlyContinue | Add-Member -TypeName SpeedTest -passthru } }
+    }
+}
+
+PROCESS {
+    $__boundParameters = $PSBoundParameters
+    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq &quot;PSDefaultValueAttribute&quot;})}).Name
+    $__defaultValueParameters.Where({ !$__boundParameters[&quot;$_&quot;] }).ForEach({$__boundParameters[&quot;$_&quot;] = get-variable -value $_})
+    $__commandArgs = @()
+    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch &quot;Debug|Whatif|Confirm|Verbose&quot; -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
+    if ($__boundParameters[&quot;Debug&quot;]){wait-debugger}
+    $__commandArgs += '--json'
+    foreach ($paramName in $__boundParameters.Keys|
+            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
+            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
+        $value = $__boundParameters[$paramName]
+        $param = $__PARAMETERMAP[$paramName]
+        if ($param) {
+            if ($value -is [switch]) {
+                 if ($value.IsPresent) {
+                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                 }
+                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
+            }
+            elseif ( $param.NoGap ) {
+                $pFmt = &quot;{0}{1}&quot;
+                if($value -match &quot;\s&quot;) { $pFmt = &quot;{0}&quot;&quot;{1}&quot;&quot;&quot; }
+                $__commandArgs += $pFmt -f $param.OriginalName, $value
+            }
+            else {
+                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                $__commandArgs += $value | Foreach-Object {$_}
+            }
+        }
+    }
+    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
+    if ($__boundParameters[&quot;Debug&quot;]){wait-debugger}
+    if ( $__boundParameters[&quot;Verbose&quot;]) {
+         Write-Verbose -Verbose -Message librespeed-cli.exe
+         $__commandArgs | Write-Verbose -Verbose
+    }
+    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
+    if (! $__handlerInfo ) {
+        $__handlerInfo = $__outputHandlers[&quot;Default&quot;] # Guaranteed to be present
+    }
+    $__handler = $__handlerInfo.Handler
+    if ( $PSCmdlet.ShouldProcess(&quot;librespeed-cli.exe $__commandArgs&quot;)) {
+    # check for the application and throw if it cannot be found
+        if ( -not (Get-Command -ErrorAction Ignore &quot;librespeed-cli.exe&quot;)) {
+          throw &quot;Cannot find executable 'librespeed-cli.exe'&quot;
+        }
+        if ( $__handlerInfo.StreamOutput ) {
+            &amp; &quot;librespeed-cli.exe&quot; $__commandArgs | &amp; $__handler
+        }
+        else {
+            $result = &amp; &quot;librespeed-cli.exe&quot; $__commandArgs
+            &amp; $__handler $result
+        }
+    }
+  } # end PROCESS
+
+&lt;#
+
+
+.DESCRIPTION
+Performs an internet speed test
+
+.PARAMETER IPv4Only
+
+
+
+.PARAMETER IPv6Only
+
+
+
+.PARAMETER NoDownload
+
+
+
+.PARAMETER NoUpload
+
+
+
+.PARAMETER ListServers
+
+
+
+.PARAMETER Server
+
+
+
+
+#&gt;
+}</code></pre>
+</doc-codeblock></div>
+<p>Obviously the last thing I do before publishing my Crescendo modules is to make sure my help file for the module is all in-place and makes total-sense I why I done the module and how to use it.</p>
+<doc-anchor-target id="i-hope-this-helps">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#i-hope-this-helps">#</doc-anchor-trigger>
+        <span>I hope this helps? <span class="docs-emoji">&#x1F917;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>I got some big plans for Crescendo as I do think it is an amazing module. Just currently I am limited in the CLIs I can use, but once I get using something big that I can share I certainly will do. I also hope that this has also demystified Crescendo for you, and shown you how to implement it on an existing CLI out there.</p>
+<p><figure class="content-center">
+    <img src="../imgs/fl3.png" alt="Thanks for reading if you got this far" />
+    <figcaption class="caption">Thanks for reading if you got this far</figcaption>
+</figure>
+</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../presentations/podcast/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Powershell Podcast</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../presentations/retypeguide/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Retype Powershell Guide</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "Crescendo", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>

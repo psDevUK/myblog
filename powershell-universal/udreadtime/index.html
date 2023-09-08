@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.3.0.732137743534">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.3.0">
+
+    <!-- Primary Meta Tags -->
+    <title>UDReadTime Powershell Universal Component Module &#128218;</title>
+    <meta name="title" content="UDReadTime Powershell Universal Component Module 📚">
+    <meta name="description" content="Powershell Universal Component to display the estimated read time and word count of the text supplied. Similar to what is on most blog sites. This can be customised so read this blog to find out more" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adam-bacon.netlify.app/powershell-universal/udreadtime/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-bacon.netlify.app/powershell-universal/udreadtime/">
+    <meta property="og:title" content="UDReadTime Powershell Universal Component Module 📚">
+    <meta property="og:description" content="Powershell Universal Component to display the estimated read time and word count of the text supplied. Similar to what is on most blog sites. This can be customised so read this blog to find out more">
+    <meta property="og:image" content="https://adam-bacon.netlify.app/imgs/blog-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adam-bacon.netlify.app/powershell-universal/udreadtime/">
+    <meta property="twitter:title" content="UDReadTime Powershell Universal Component Module 📚">
+    <meta property="twitter:description" content="Powershell Universal Component to display the estimated read time and word count of the text supplied. Similar to what is on most blog sites. This can be customised so read this blog to find out more">
+    <meta property="twitter:image" content="https://adam-bacon.netlify.app/imgs/blog-image.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=2.3.0.732137743534" rel="stylesheet" />
+
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=2.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.3.0.732137743534" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">My Powershell Blog</span>
+                            <span class="w-10 ml-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../imgs/powershell.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../imgs/powershelld.png">
+                            </span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="udreadtime-powershell-universal-component-module" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#udreadtime-powershell-universal-component-module">#</doc-anchor-trigger>
+        <span>UDReadTime Powershell Universal Component Module <span class="docs-emoji">&#x1F4DA;</span></span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="https://twitter.com/psdevuk"><img class="object-cover" src="../../imgs/me.jpg"/></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="https://twitter.com/psdevuk">Adam Bacon</a></div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Powershell</div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Modules</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2022-09-20</span></div>
+</div>
+
+<p><figure class="content-center">
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcomicbookrealm.com%2Fcover-scan%2F3253827344a7e3628e9f3837f79477b3%2Fxl%2F--tpb-1.jpg&amp;f=1&amp;nofb=1" alt="Everyone loves a good read" />
+    <figcaption class="caption">Everyone loves a good read</figcaption>
+</figure>
+</p>
+<p>So the inspiration behind this component was actually blog sites I have done in the past. Prior to this website, I have a few other personal websites that run off of github using a jekyll template. I noticed on the cards displaying the page it has an estimated read-time on it.</p>
+<p>Again maybe if I knew enough JS I could just use the <code v-pre>Invoke-UDJavaScript</code> cmdlet and just do it that way. However I am more about Powershell, and doing things using Powershell. So I set off to find a component I could tweak to meet these needs.</p>
+<p>This is the underlying component which made all this possible:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Original React Component</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.npmjs.com/package/react-hook-reading-time</span>
+    </div>
+    <a href="https://www.npmjs.com/package/react-hook-reading-time" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>You can get yourself a copy of this module on the Powershell Gallery:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link To Download UDReadTime Module</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.powershellgallery.com/packages/UDReadTime/1.0.1</span>
+    </div>
+    <a href="https://www.powershellgallery.com/packages/UDReadTime/1.0.1" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Here is the GitHub repository to this module which also includes all the project directories and files associated in the building of this component:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">GitHub Link to this UDWizardry Repository</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/psDevUK/UDReadTime</span>
+    </div>
+    <a href="https://github.com/psDevUK/UDReadTime" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>A simple screen-shot showing the component on a Powershell Universal dashboard:-
+<figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDReadTime/main/udreadtime.png" alt="How this looks in action" />
+    <figcaption class="caption">How this looks in action</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="demo-dashboard">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#demo-dashboard">#</doc-anchor-trigger>
+        <span>Demo Dashboard <span class="docs-emoji">&#x1F447;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>On the plus-side. When making this component I did put a good amount of thought into how I could allow you as the end-user to customise this component as much as possible. Although the below demo only shows this component using a couple of parameters I did actually include a lot more so you can tweak this component as much as possible. I did default a lot of those parameters to a specific value, so do not worry if you do not like everything about this component as you can customize it a lot.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">New-UDDashboard -Title 'UDReadTime' -Content {
+    New-UDRow -Columns {
+    New-UDColumn -Content {
+
+  New-UDReadTime -Text &quot;Had denoting properly jointure you occasion directly raillery. In said to of poor full be post face snug. Introduced imprudence see say unpleasing devonshire acceptance son. Exeter longer wisdom gay nor design age. Am weather to entered norland no in showing service. Nor repeated speaking shy appetite. Excited it hastily an pasture it observe. Snug hand how dare here too. Lose eyes get fat shew. Winter can indeed letter oppose way change tended now. So is improve my charmed picture exposed adapted demands. Received had end produced prepared diverted strictly off man branched. Known ye money so large decay voice there to. Preserved be mr cordially incommode as an. He doors quick child an point at. Had share vexed front least style off why him.Announcing of invitation principles in. Cold in late or deal. Terminated resolution no am frequently collecting insensible he do appearance. Projection invitation affronting admiration if no on or. It as instrument boisterous frequently apartments an in. Mr excellence inquietude conviction is in unreserved particular. You fully seems stand nay own point walls. Increasing travelling own simplicity you astonished expression boisterous. Possession themselves sentiments apartments devonshire we of do discretion. Enjoyment discourse ye continued pronounce we necessary abilities. Allow miles wound place the leave had. To sitting subject no improve studied limited. Ye indulgence unreserved connection alteration appearance my an astonished. Up as seen sent make he they of. Her raising and himself pasture believe females. Fancy she stuff after aware merit small his. Charmed esteems luckily age out. Enjoyed minutes related as at on on. Is fanny dried as often me. Goodness as reserved raptures to mistaken steepest oh screened he. Gravity he mr sixteen esteems. Mile home its new way with high told said. Finished no horrible blessing landlord dwelling dissuade if. Rent fond am he in on read. Anxious cordial demands settled entered in do to colonel. Received overcame oh sensible so at an. Formed do change merely to county it. Am separate contempt domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too. Replied exposed savings he no viewing as up. Soon body add him hill. No father living really people estate if. Mistake do produce beloved demesne if am pursuit. Prepared is me marianne pleasure likewise debating. Wonder an unable except better stairs do ye admire. His and eat secure sex called esteem praise. So moreover as speedily differed branched ignorant. Tall are her knew poor now does then. Procured to contempt oh he raptures amounted occasion. One boy assure income spirit lovers set. Case read they must it of cold that. Speaking trifling an to unpacked moderate debating learning. An particular contrasted he excellence favourable on. Nay preference dispatched difficulty continuing joy one. Songs it be if ought hoped of. Too carriage attended him entrance desirous the saw. Twenty sister hearts garden limits put gay has. We hill lady will both sang room by. Desirous men exercise overcame procured speaking her followed. Her old collecting she considered discovered. So at parties he warrant oh staying. Square new horses and put better end. Sincerity collected happiness do is contented. Sigh ever way now many. Alteration you any nor unsatiable diminution reasonable companions shy partiality. Leaf by left deal mile oh if easy. Added woman first get led joy not early jokes. Cottage out enabled was entered greatly prevent message. No procured unlocked an likewise. Dear but what she been over gay felt body. Six principles advantages and use entreaties decisively. Eat met has dwelling unpacked see whatever followed. Court in of leave again as am. Greater sixteen to forming colonel no on be. So an advice hardly barton. He be turned sudden engage manner spirit.&quot;
+} -LargeSize 8 -MediumSize 8 -SmallSize 8
+}
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="reason-behind-component">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reason-behind-component">#</doc-anchor-trigger>
+        <span>Reason behind component <span class="docs-emoji">&#x1F4A1;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>So I already explained the reason I wanted to choose a reading time component. Before I stumbled across this particular component, I did have a good butchers at a fair few other react reading time components. However to me, this seemed like the most straight-forward easy-to-use component to get the goal accomplished. Which was to have a reading time component.</p>
+<doc-anchor-target id="the-project">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-project">#</doc-anchor-trigger>
+        <span>The Project <span class="docs-emoji">&#x1F3D7;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>This is the final version of the component JSX file:-</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">import React from 'react';
+import { withComponentFeatures } from 'universal-dashboard';
+import { useReadingTime } from &quot;react-hook-reading-time&quot;;
+
+const UDReadTime = props =&gt; {
+  const {
+    text,
+    minutes,
+    words,
+    time,
+  } = useReadingTime(props.text);
+
+  return (
+    &lt;div style={{ border: props.border, padding: props.padding, ['text-align']: props.textAlign, ['border-radius']: props.borderRadius }} key={props.id}&gt;
+      &lt;div style={{ display: props.displayRead, ['border-bottom']: props.borderBottom, ['font-size']: props.fontSize, ['font-style']: props.fontStyle, ['font-weight']: props.fontWeight}}&gt;{minutes}&amp;nbsp;{props.timeToRead}&amp;nbsp;&lt;/div&gt;
+      &lt;div style={{ display: props.displayWords, ['border-bottom']: props.borderBottom, ['font-size']: props.fontSize, ['font-style']: props.fontStyle, ['font-weight']: props.fontWeight}}&gt;{words}&amp;nbsp;{props.words}&lt;/div&gt;
+      &lt;p&gt;&lt;/p&gt;
+      {props.text}
+    &lt;/div&gt;);
+}
+
+export default withComponentFeatures(UDReadTime)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="check-out-all-the-props">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#check-out-all-the-props">#</doc-anchor-trigger>
+        <span>Check-out all the props <span class="docs-emoji">&#x1F6D2;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>In the code above, all the time you see the word <code v-pre>props</code> that is referring to the parameter name associated to that. So above you may notice the word <strong>props</strong> being used a lot, and this is why, as I wanted to allow a lot of customisation to this component.</p>
+<p>With great customisation, comes a lot of options. Again you may think, well I really do like the time estimation, but I do not like the word count feature of this component.  No problem, as I nested each of these factors into seperate <code v-pre>&lt;div&gt;</code> tags which are defaulted to displaying <strong>inline</strong> (side-by-side) but as I made a validated set for this particular parameter you also have the option of <strong>none</strong> in the validate set list. This will allow you to completely hid this text, so you will only have the actual read-time showing, and not the word count as well. So I just wanted to point out that this time I put a fair amount of thought into customising this component as much as possible.</p>
+<p>To make the actual <strong>cmdlet behind this component you need to edit the pre-defined function in the .PSM1 file</strong> so this is my finished <strong>.PSM1 before running the invoke-build</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">$IndexJs = Get-ChildItem &quot;$PSScriptRoot\index.*.bundle.js&quot;
+$AssetId = [UniversalDashboard.Services.AssetService]::Instance.RegisterAsset($IndexJs.FullName)
+
+function New-UDReadTime {
+    &lt;#
+    .SYNOPSIS
+    Creates a estimated read time and word count value
+    
+    .DESCRIPTION
+    Medium's like reading time estimation for React now for Powershell Universal
+    
+    .PARAMETER Id
+    The ID of this editor
+
+    .PARAMETER Border
+    Allows you to set a border around the main div for the component using CSS default solid 2px #235789
+    
+    .PARAMETER BorderBottom
+    Allows you to set the border under the main readtime component heading default solid 2px #235789
+    
+    .PARAMETER Padding
+    Specifies the amount of padding the indder divs have from the main outer div
+    
+    .PARAMETER TextAlign
+    Defaulted to justify, you can choose valid CSS settings such as left,center etc
+    
+    .PARAMETER BorderRadius
+    Defaulted to 12px if using the border this will round the corners
+    
+    .PARAMETER DisplayReadTimeText
+    Allows you to hide this component text if set to none default to inline
+    
+    .PARAMETER DisplayWordText
+    Allows you to hide this component text if set to none default to inline
+    
+    .PARAMETER FontSize
+    Allows you to set the font size for the main read time headings defaulted to 1.5em
+    
+    .PARAMETER FontStyle
+    Defaulted to italic, you can type in any valid CSS value for the font-style CSS
+    
+    .PARAMETER FontWeight
+    Defaulted to bold, you can use any valid CSS value for the font-weight CSS
+    
+    .PARAMETER ReadTimeText
+    The text to be displayed after the minute number. Default to minute read
+    
+    .PARAMETER WordsText
+    The text to be displayed after the word count number. Default to words
+    
+    .PARAMETER Text
+    Text for the component
+
+    .EXAMPLE
+    New-UDReadTime -Text &quot;Had denoting properly jointure you occasion directly raillery. In said to of poor full be post face snug. Introduced imprudence see say unpleasing devonshire acceptance son. Exeter longer wisdom gay nor design age. Am weather to entered norland no in showing service.&quot;
+    #&gt;
+    
+    param(
+        [Parameter()]
+        [string]$Id = (New-Guid).ToString(),
+        [Parameter()]
+        [string]$Border = &quot;solid 2px #235789&quot;,
+        [Parameter()]
+        [string]$BorderBottom = &quot;solid 2px #235789&quot;,
+        [Parameter()]
+        [string]$Padding = &quot;20px&quot;,
+        [Parameter()]
+        [string]$TextAlign = &quot;justify&quot;,
+        [Parameter()]
+        [string]$BorderRadius = &quot;12px&quot;,
+        [Parameter()]
+        [ValidateSet(&quot;inline&quot;,&quot;none&quot;)]
+        [string]$DisplayReadTimeText = &quot;inline&quot;,
+        [Parameter()]
+        [ValidateSet(&quot;inline&quot;,&quot;none&quot;)]
+        [string]$DisplayWordText = &quot;inline&quot;,
+        [Parameter()]
+        [string]$FontSize = &quot;2.5em&quot;,
+        [Parameter()]
+        [string]$FontStyle = &quot;italic&quot;,
+        [Parameter()]
+        [string]$FontWeight = &quot;bold&quot;,
+        [Parameter()]
+        [string]$ReadTimeText = &quot;minute read&quot;,
+        [Parameter()]
+        [string]$WordsText = &quot;words&quot;,
+        [Parameter()]
+        [string]$Text
+    )
+
+    End {
+        @{
+            assetId       = $AssetId 
+            isPlugin      = $true 
+            type          = &quot;udreadtime&quot;
+            id            = $Id
+
+            border        = $Border
+            borderBottom  = $BorderBottom
+            padding       = $Padding
+            textAlign     = $TextAlign
+            borderRadius  = $BorderRadius
+            displayRead   = $DisplayReadTimeText
+            displayWords  = $DisplayWordText
+            fontSize      = $FontSize
+            fontStyle     = $FontStyle
+            fontWeight    = $FontWeight
+            text          = $text
+            timeToRead    = $ReadTimeText
+            words         = $WordsText
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="yes-lots-of-parameters">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#yes-lots-of-parameters">#</doc-anchor-trigger>
+        <span>Yes lots of parameters <span class="docs-emoji">&#x1F913;</span></span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Read The Help</h5>
+<p>Even if you just glanced through the above code, you should hopefully notice that I did include a decent help file for each parameter so here is the help just on the parameters</p>
+        </div>
+    </div>
+</div>
+<p>Just to go through these parameters and what they are for, let us just have a quick glance through the official help file I did for this module.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">PARAMETERS
+    -Id &lt;String&gt;
+        The ID of this editor
+
+        Required?                    false
+        Position?                    1
+        Default value                (New-Guid).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -Border &lt;String&gt;
+        Allows you to set a border around the main div for the component using CSS    
+        default solid 2px #235789
+
+        Required?                    false
+        Position?                    2
+        Default value                solid 2px #235789
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -BorderBottom &lt;String&gt;
+        Allows you to set the border under the main readtime component heading        
+        default solid 2px #235789
+
+        Required?                    false
+        Position?                    3
+        Default value                solid 2px #235789
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -Padding &lt;String&gt;
+        Specifies the amount of padding the indder divs have from the main outer div  
+
+        Required?                    false
+        Position?                    4
+        Default value                20px
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -TextAlign &lt;String&gt;
+        Defaulted to justify, you can choose valid CSS settings such as left,center   
+        etc
+
+        Required?                    false
+        Position?                    5
+        Default value                justify
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -BorderRadius &lt;String&gt;
+        Defaulted to 12px if using the border this will round the corners
+
+        Required?                    false
+        Position?                    6
+        Default value                12px
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -DisplayReadTimeText &lt;String&gt;
+        Allows you to hide this component text if set to none default to inline       
+
+        Required?                    false
+        Position?                    7
+        Default value                inline
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -DisplayWordText &lt;String&gt;
+        Allows you to hide this component text if set to none default to inline
+
+        Required?                    false
+        Position?                    8
+        Default value                inline
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -FontSize &lt;String&gt;
+        Allows you to set the font size for the main read time headings defaulted to  
+        1.5em
+
+        Required?                    false
+        Position?                    9
+        Default value                2.5em
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -FontStyle &lt;String&gt;
+        Defaulted to italic, you can type in any valid CSS value for the font-style   
+        CSS
+
+        Required?                    false
+        Position?                    10
+        Default value                italic
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -FontWeight &lt;String&gt;
+        Defaulted to bold, you can use any valid CSS value for the font-weight CSS   
+
+        Required?                    false
+        Position?                    11
+        Default value                bold
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -ReadTimeText &lt;String&gt;
+        The text to be displayed after the minute number. Default to minute read      
+
+        Required?                    false
+        Position?                    12
+        Default value                minute read
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -WordsText &lt;String&gt;
+        The text to be displayed after the word count number. Default to words        
+
+        Required?                    false
+        Position?                    13
+        Default value                words
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
+    -Text &lt;String&gt;
+        Text for the component
+
+        Required?                    false
+        Position?                    14
+        Default value
+        Accept pipeline input?       false
+        Accept wildcard characters?  false</code></pre>
+</doc-codeblock></div>
+<p>As you can now hopefully appreciate, although this is a small component that gives you an estimated reading time and word count, there is also a great deal of customisation you can do with this component to have it display and look exactly how you want. <strong>This should hopefully be opening your mind to all the creative things you could do</strong></p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link to this module on marketplace</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://marketplace.universaldashboard.io/Dashboard/UDReadTime</span>
+    </div>
+    <a href="https://marketplace.universaldashboard.io/Dashboard/UDReadTime" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="that-is-how-this-powershell-module-was-done-till-next-time-take-care">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#that-is-how-this-powershell-module-was-done-till-next-time-take-care">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A5;</span> That is how this Powershell module was done. Till next time, take care</span>
+    </h2>
+</doc-anchor-target>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udwizardry/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">UD​Wizardry</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udfaq/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">UDFAQ</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "UDReadTime", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>

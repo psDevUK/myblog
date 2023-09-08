@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.3.0.732137743534">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.3.0">
+
+    <!-- Primary Meta Tags -->
+    <title> My Personal Powershell Blog</title>
+    <meta name="title" content=" My Personal Powershell Blog">
+    <meta name="description" content="Personal blog about Powershell this is my first blog page and talks about who I am and why I got into Powershell scripting." />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adam-bacon.netlify.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-bacon.netlify.app/">
+    <meta property="og:title" content=" My Personal Powershell Blog">
+    <meta property="og:description" content="Personal blog about Powershell this is my first blog page and talks about who I am and why I got into Powershell scripting.">
+    <meta property="og:image" content="https://adam-bacon.netlify.app/imgs/blog-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adam-bacon.netlify.app/">
+    <meta property="twitter:title" content=" My Personal Powershell Blog">
+    <meta property="twitter:description" content="Personal blog about Powershell this is my first blog page and talks about who I am and why I got into Powershell scripting.">
+    <meta property="twitter:image" content="https://adam-bacon.netlify.app/imgs/blog-image.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="resources/css/retype.css?v=2.3.0.732137743534" rel="stylesheet" />
+
+    <script type="text/javascript" src="resources/js/config.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/retype.js?v=2.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">My Powershell Blog</span>
+                            <span class="w-10 ml-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="imgs/powershell.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="imgs/powershelld.png">
+                            </span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<p><figure class="content-center">
+    <img src="imgs/blog-image.png" alt="Blogs with great comic references" />
+    <figcaption class="caption">Blogs with great comic references</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="my-personal-powershell-blog" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#my-personal-powershell-blog">#</doc-anchor-trigger>
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M12 2.5a5.5 5.5 0 00-3.096 10.047 9.005 9.005 0 00-5.9 8.18.75.75 0 001.5.045 7.5 7.5 0 0114.993 0 .75.75 0 101.499-.044 9.005 9.005 0 00-5.9-8.181A5.5 5.5 0 0012 2.5zM8 8a4 4 0 118 0 4 4 0 01-8 0z"/></g></g></svg> My Personal Powershell Blog</span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="https://twitter.com/psdevuk"><img class="object-cover" src="imgs/me.jpg"/></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="https://twitter.com/psdevuk">Adam Bacon</a></div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Powershell</div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Personal</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2022-07-16</span></div>
+</div>
+
+<doc-anchor-target id="a-bit-about-me">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#a-bit-about-me">#</doc-anchor-trigger>
+        <span>A bit about me <span class="docs-emoji">&#x1F610;</span></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="imgs/life.png" alt="Great book I have read all my kids" />
+    <figcaption class="caption">Great book I have read all my kids</figcaption>
+</figure>
+</p>
+<p>Well I turned 40 this year <span class="docs-emoji">&#x1F92F;</span> I thought damn that&#x27;s come about quick <span class="docs-emoji">&#x23F3;</span>. Just seems the other day I was 26 <span class="docs-emoji">&#x1F3C4;&#x200D;&#x2642;&#xFE0F;</span>. My eldest daughter is 14 this year, and I got 4 daughters <span class="docs-emoji">&#x1F46A;</span>. It is just mad how quickly time can fly-past <span class="docs-emoji">&#x23F0;</span>. However I remember when I was becoming a dad for the first time <span class="docs-emoji">&#x1F914;</span> I was trying to better my IT career <span class="docs-emoji">&#x1F4B7;</span>. Powershell had just come out as version one, renamed from Monad. I knew a bit about coding DOS, so I thought I would jump in the deep-end <span class="docs-emoji">&#x1F30A;</span> and learn this new object orientated language Microsoft had just released. So I went and bought <span class="docs-emoji">&#x1F4DA;</span> books on learning Powershell, and well tried to understand what the heck they were trying to explain <span class="docs-emoji">&#x1F615;</span> as I got to say at first none of it really made any sense.</p>
+<doc-anchor-target id="why-bother-with-scripting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-bother-with-scripting">#</doc-anchor-trigger>
+        <span>Why bother with scripting..? <span class="docs-emoji">&#x1F615;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>I remember a long time ago providing 2nd-line support, and I was invited to do some over-time. As I was contracting it was a pretty good hourly rate as it was. Having that at time and a half <span class="docs-emoji">&#x1F911;</span> was really good. So I think about 5 of us turned up for the over-time, and to make the deal even better, the boss bought every-one lots of pizza <span class="docs-emoji">&#x1F355;</span> to make up for all the installs we had to do across all the different sites. Anyways by the time we had finished eating this pizza this one particular guy had pretty much finished coding the whole install, to run across all the different sites.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>I was like no way!</p>
+        </div>
+    </div>
+</div>
+<p>He just pressed the enter button on the keyboard, and all the installs kicked off, and ran on each computer at each site. This one guy had just saved the rest of us like 4+ hours of work. I was totally astonished <span class="docs-emoji">&#x1F632;</span> that a mere human had just made the computers at each site do the job automatically. This was before Powershell even existed. Pretty much from that day forward I wanted to be that person who could make the computers do the hard work for a change instead of me.
+<figure class="content-center">
+    <img src="imgs/help.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="my-first-script">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#my-first-script">#</doc-anchor-trigger>
+        <span>My first script <span class="docs-emoji">&#x1F9FE;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>At the time I was working for local council providing 2nd-line support to over 700 schools <span class="docs-emoji">&#x1F3EB;</span> in the south east of England <span class="docs-emoji">&#x1F1EC;&#x1F1E7;</span>. My job role did change several times, from being remote support, <span class="docs-emoji">&#x1F4BB;</span> to being the main on-site support for 14 different schools, <span class="docs-emoji">&#x1F468;&#x200D;&#x1F4BB;</span> then moving to supporting various other aspects of the services the council provided. It was during this time they planned a much needed update of Windows XP which was and had been the solution for quite some-time. <code v-pre>It was taking 4 to 5 consultants one whole week or more</code> to visit the school or college who was interested in the upgrade. Then physically and manually check certain aspects of each machine, each monitor, each printer to then collate this information to be able to provide a quote to the school or college on which equipment would need to be replaced, or upgraded to meet the requirements of running Windows 7.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>One week wage of 4 to 5 people to complete this task</p>
+        </div>
+    </div>
+</div>
+<p>I had finished reading my <span class="docs-emoji">&#x1F4D8;</span> first book, and was feeling that this was a calling from above <span class="docs-emoji">&#x1F32C;&#xFE0F;</span> to write a script to automate the process of collecting this information, <span class="docs-emoji">&#x2139;&#xFE0F;</span> and more importantly removing human error <span class="docs-emoji">&#x1F47D;</span> from the equation, as if you have done IT support, you know how tiny those serial numbers are, and trying to tell the difference between a 8 and a B can mean all the difference when you need support from Dell and provide an invalid serial. In my own personal time I had written a long script which would collect all the information they required using WMI, plus some bonus information like knowing how many memory slots were free to be used, doing all this without opening the computer or even needing to visit the school or college. I was able to audit 500+ computers and have all this information in Excel within 45 minutes. Just me one person on my own. <span class="docs-emoji">&#x1F929;</span> Even though I had to jump through lots of burning hoops to get to use my script, and write various emails to explain this no-brainer <span class="docs-emoji">&#x1F9E0;</span> process that they would <strong>save money and save time. Lots of it too</strong> <span class="docs-emoji">&#x1F4B0;</span>
+To me it reminded me that day of eating free pizza <span class="docs-emoji">&#x1F355;</span> and getting paid decent money to sit there and well not do a lot. Although it took me a lot longer than the DOS script written years previously, I had felt I had now achieved <span class="docs-emoji">&#x1F39A;&#xFE0F;</span> a new level, and was more than just a point-and-click administrator <span class="docs-emoji">&#x1F5B1;&#xFE0F;</span></p>
+<doc-anchor-target id="more-scripting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#more-scripting">#</doc-anchor-trigger>
+        <span>More scripting <span class="docs-emoji">&#x267B;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Thankfully my next job was a lot more challenging than my previous and there was no change management in-place so I had a lot of free regin to choose how to fix a given problem. Previously a lot of my IT jobs were providing IT support for something that was broken or had stopped working. However this job a lot of people seemed to expect you to know how to do their job and write Excel formulas to solve their spreadsheet issues. As well as doing lots of SQL querying for various different departments producing reports, as well as supporting all the IT in the business and 7 remote sites. This was just screaming automation to me, and although I wasn&#x27;t great at Excel or SQL at the time, it was a great opportunity to become the best I could be. So I was very grateful <span class="docs-emoji">&#x1F601;</span> when the company I was working for brought me a copy of <strong>Powershell Studio</strong> this then allowed me to make my scripts point and click (yes I know I was trying to get away from that) which in-turn allowed me to develop scripts that would essential automate a particular task or job within the business. I remember how one lady had stacks and stacks of paper on her desk, and was manually holding these up and cross-checking them with the results on the <span class="docs-emoji">&#x1F5A5;&#xFE0F;</span> screen <span class="docs-emoji">&#x1F996;</span> I was able to get the customer to send the required data via CSV format and automate the whole process for this staff member. I also had managed to solve a critical business issue that had been outstanding for about 5 years that no-one who had previously looked at it had managed to solve, by writing my own SQL stored procedures and running this from a GUI application I built to then display the results. Again this saved the company a massive amount of money, from solving this outstanding problem.
+So the one thing really bugging me at this point was no matter how much I tried, these windows forms I was producing with Powershell Studio always looked like Windows 95 forms to me.
+<figure class="content-center">
+    <img src="imgs/win95.png" alt="OldSkool" />
+    <figcaption class="caption">OldSkool</figcaption>
+</figure>
+So after looking about on the internet for something to help me improve the GUI aspect of my application, and find something better to do reporting in powershell with <code v-pre>other than having to rely on Excel all the time to compile the finished result</code>, even if I gathered the data all via Powershell and exported to CSV, it was still Excel as the end thing being displayed with the data. I wanted this to all be <span class="docs-emoji">&#x1F914;</span> Powershell. Then Universal Dashboard <strong>aka</strong> Powershell Universal had just been released by the very talented Adam Driscoll. Again this was like a calling from above, and I needed to get on this new hype-train <span class="docs-emoji">&#x1F685;</span> right away. Then began a whole new experience with <span class="docs-emoji">&#x1F495;</span> Powershell and <span class="docs-emoji">&#x1F60D;</span> React. Universal Dashboard was the best thing since <span class="docs-emoji">&#x1F35E;</span> sliced bread. It was just so amazing <span class="docs-emoji">&#x1F92F;</span> what you could do, like the only thing holding you back was your imagination. For me this really did take my Powershell to another new level, I started to release module after module, and create a blog site dedicated to this amazing software for a good few years.
+<figure class="content-center">
+    <img src="imgs/udflix.png" alt="https://psdevuk.github.io/ud-flix/" />
+    <figcaption class="caption">https://psdevuk.github.io/ud-flix/</figcaption>
+</figure>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">My UDFLIX Blog Site <span class="docs-emoji">&#x1F449;</span></span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://psdevuk.github.io/ud-flix/</span>
+    </div>
+    <a href="https://psdevuk.github.io/ud-flix/" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="100-powershell-modules">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#100-powershell-modules">#</doc-anchor-trigger>
+        <span>100+ Powershell Modules <span class="docs-emoji">&#x1F396;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>I was very active on the forum for Universal Dashboard, and had seen it change and grow in-size of community members. This software was going to a whole new level, and it did, it became Powershell Universal. As mentioned I was very active in the forum, and being the kind <span class="docs-emoji">&#x1F497;</span> hearted person I am I tried to make as many of these new web page components I could for other community members to bring some new way of displaying data or navigating the web-pages you could produce. Before I knew it, I had published over 100 modules to the Powershell gallery.</p>
+<doc-anchor-target id="recent-modules">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recent-modules">#</doc-anchor-trigger>
+        <span>Recent Modules <span class="docs-emoji">&#x1F52E;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Not that long ago on <strong>twitter</strong> where I feel privlidged to have so many <span class="docs-emoji">&#x1F60E;</span> cool connections in the Powershell <span class="docs-emoji">&#x1F30E;</span> world I replied to a tweet about how come Powershell didn&#x27;t have the equivalent of a hidden gem of a tool from Microsoft aka Logparser. I had some IIS log files I wanted to gather information from and instead of using Powershell I had to rely on an unknown gem from Microsoft, using the command line. Another tweet was posted something along the lines of</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(1, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span><span class="docs-emoji">&#x1F447;</span> <span class="docs-emoji">&#x1F644;</span></span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Just find a C# library that does the heavy lifting and turn that into a module</p>
+    </div>
+</div>
+<p>So I was super <span class="docs-emoji">&#x1F603;</span> happy when I came back to check on twitter to find a very talented person had only gone and smashed it in about an hour!
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">IISParser Module <span class="docs-emoji">&#x1F680;</span></span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://evotec.xyz/powershell-modules/iisparser-powershell-module/</span>
+    </div>
+    <a href="https://evotec.xyz/powershell-modules/iisparser-powershell-module/" class="absolute block inset-0"></a>
+</div>
+First I was totally amazed at the fact someone had done this, but secondly they had used a method I did not have knowledge on, making this into a binary module. I was thinking damn <span class="docs-emoji">&#x1F627;</span> I have read so many <span class="docs-emoji">&#x1F4D6;</span> books on Powershell and purchased a good amount of training videos <span class="docs-emoji">&#x1F4FC;</span> but had not come across this <span class="docs-emoji">&#x1F9D9;</span> Powershell magic before. Again the very talented Adam Driscoll had recently published the <strong>Sysinternals</strong> module for Powershell and had hosted the template on git which uses Crescendo. He also was kind enough to share a link to a youtube video on the process of making binary modules in Powershell that he uses.
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="https://www.youtube.com/embed/4fgccFI-EHY" allowfullscreen></iframe>
+    </div>
+</figure>
+Again I felt this was a calling and the time to try and up my Powershell skill to yet another level and find time to learn this process and produce some new modules, as it had been a while since I had posted anything to the Powershell gallery. So I got busy in the evenings and cooked up some new modules, one of them being the Retype module I used to produce this website.
+<figure class="content-center">
+    <img src="imgs/recent.png" alt="Recent Powershell Modules" />
+    <figcaption class="caption">Recent Powershell Modules</figcaption>
+</figure>
+</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="misionimpossible/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Mission Impossible</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "About Me", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.3.0.732137743534">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.3.0">
+
+    <!-- Primary Meta Tags -->
+    <title>UDSliderCaptcha Powershell Universal Component Module &#128273;</title>
+    <meta name="title" content="UDSliderCaptcha Powershell Universal Component Module 🔑">
+    <meta name="description" content="Powershell Universal Component that provides a simple jigsaw captcha slider for the end-user to slide into place to correctly move on. To my knowledge a captcha does not exist for Powershell Universal. So thought this would be an excellent project read the blog I wrote here" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adam-bacon.netlify.app/powershell-universal/udslidercaptcha/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-bacon.netlify.app/powershell-universal/udslidercaptcha/">
+    <meta property="og:title" content="UDSliderCaptcha Powershell Universal Component Module 🔑">
+    <meta property="og:description" content="Powershell Universal Component that provides a simple jigsaw captcha slider for the end-user to slide into place to correctly move on. To my knowledge a captcha does not exist for Powershell Universal. So thought this would be an excellent project read the blog I wrote here">
+    <meta property="og:image" content="https://adam-bacon.netlify.app/imgs/dm.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adam-bacon.netlify.app/powershell-universal/udslidercaptcha/">
+    <meta property="twitter:title" content="UDSliderCaptcha Powershell Universal Component Module 🔑">
+    <meta property="twitter:description" content="Powershell Universal Component that provides a simple jigsaw captcha slider for the end-user to slide into place to correctly move on. To my knowledge a captcha does not exist for Powershell Universal. So thought this would be an excellent project read the blog I wrote here">
+    <meta property="twitter:image" content="https://adam-bacon.netlify.app/imgs/dm.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=2.3.0.732137743534" rel="stylesheet" />
+
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=2.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.3.0.732137743534" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">My Powershell Blog</span>
+                            <span class="w-10 ml-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../imgs/powershell.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../imgs/powershelld.png">
+                            </span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="udslidercaptcha-powershell-universal-component-module" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#udslidercaptcha-powershell-universal-component-module">#</doc-anchor-trigger>
+        <span>UDSliderCaptcha Powershell Universal Component Module <span class="docs-emoji">&#x1F511;</span></span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="https://twitter.com/psdevuk"><img class="object-cover" src="../../imgs/me.jpg"/></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="https://twitter.com/psdevuk">Adam Bacon</a></div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Powershell</div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Modules</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2022-09-02</span></div>
+</div>
+
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link To Download UDSliderCaptcha Module</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.powershellgallery.com/packages/UDSliderCaptcha/1.1.0</span>
+    </div>
+    <a href="https://www.powershellgallery.com/packages/UDSliderCaptcha/1.1.0" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">GitHub Link to this UDSliderCaptcha Repository</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/psDevUK/UDSliderCaptcha</span>
+    </div>
+    <a href="https://github.com/psDevUK/UDSliderCaptcha" class="absolute block inset-0"></a>
+</div>
+</p>
+<p><figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDSliderCaptcha/main/UDSliderCaptcha.gif" alt="Gif Demo of the component in action" />
+    <figcaption class="caption">Gif Demo of the component in action</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="powershell-universal">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#powershell-universal">#</doc-anchor-trigger>
+        <span>Powershell Universal <span class="docs-emoji">&#x1F30E;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>If you read my last blog, then please feel free to skip these first few paragraph titles. I just want to re-emphasize how **amazing Powershell Universal is, and how it could change the way you code, and think about displaying your code. I have mentioned this a good few times in previous blogs that I really miss using Powershell Universal. I mean when I first got using this, it was just called Universal Dashboard.  This then grew into a product offering three main features Jobs, APIs and Dashboards. This became Powershell Universal, read all about what it can do here:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">More information on this great product here</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://ironmansoftware.com/powershell-universal/</span>
+    </div>
+    <a href="https://ironmansoftware.com/powershell-universal/" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>To me this product is just so amazing. Not only does it contain a huge amount of components for your dashboards, <strong>images, cards, accordians, buttons, select options, graphs and lots more</strong> the developer of this software also gave the opportunity to allow you as an end-user build <strong>custom components</strong> to extend the list of components that can be used.</p>
+<p>Check out the demo instance of this software to get a feel for the main product portal where you can control all the super cool stuff you can do.</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Demo instance of the product</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://demo.powershelluniversal.com/</span>
+    </div>
+    <a href="https://demo.powershelluniversal.com/" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="react-component">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#react-component">#</doc-anchor-trigger>
+        <span>React Component <span class="docs-emoji">&#x1F527;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Yes I know I keep mentioning the word <strong>component</strong> but you may know this as a <strong>widget</strong> or <strong>self-contained application</strong>, or maybe a <strong>mini application</strong> to me a component does its own thing using its own bit of the webpage and can have certain parameters associated with it. So you could have a graph component that has a refresh button. Back in the old web days, this would refresh the whole webpage to then re-render the graph.  Where-as a React component would just refresh that component, and anything else on the web-page would be un-affected by this refresh happening on the graph component. This is why to me they are isolated objects on the web-page all running in their own run-spaces.</p>
+<p>Although Powershell Universal is like amazing, like so amazing. It is using that material-ui theme, and all the associated components with that theme. All the components for this react theme are listed here:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">the first of the Material-UI components</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://mui.com/material-ui/react-autocomplete/</span>
+    </div>
+    <a href="https://mui.com/material-ui/react-autocomplete/" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>So hopefully by now you know what I mean by the word component. If you are still confused then please check-out the official documentation for the components that are included into this product. Seriously this is well worth reading the documentation to understand this product more, as just like it was for me, all this was brand-new stuff to learn, and get my head around what these different components did, how they displayed on the screen, and how I could use them for particular parts of my dashboard.</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Official Documentation for Powershell Universal Components</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://docs.powershelluniversal.com/userinterfaces/dashboards/components</span>
+    </div>
+    <a href="https://docs.powershelluniversal.com/userinterfaces/dashboards/components" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="custom-component">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-component">#</doc-anchor-trigger>
+        <span>Custom Component <span class="docs-emoji">&#x2692;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>There are many places you can find custom react components that either individuals have built, or a team of people working together to build a component. One site I like to see custom react components on is npmjs.com
+there is also <a href="https://bit.cloud/">https://bit.cloud/</a> however I prefer to use:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Official NPMJS website</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>www.npmjs.com</span>
+    </div>
+    <a href="www.npmjs.com" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Seriously the react component library is massive, like really, really big. There are just so many components out there. Like looking at card components, hundreds are returned...but end of the day they are all card components...just a bit different looking (themed). So as always just like pretty much all my modules I try to produce I try to find something that does not already exist, and will hopefully benefit others. I remember a good few years back I looked at a captcha but it was too difficult to implement, and I am not an expert on tokens to verify, which it seemed all captcha components required. Still to this day there is no official captcha component for the official product. So to me this was a change to prove to my guardian angel I was back on the path to making things happen.</p>
+<doc-anchor-target id="slider-image-captcha">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#slider-image-captcha">#</doc-anchor-trigger>
+        <span>Slider Image Captcha <span class="docs-emoji">&#x1F510;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>First step was to go to <a href="http://www.npmjs.com">www.npmjs.com</a> to see what I could find on there. I believe I hit that jackpot, and found a captcha that did not rely on tokens or other servers providing that information and authenticating the captcha that way. Instead it uses one jigsaw puzzle that you need to simply slide onto the one missing spot.</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">The component I found react-puzzle-confirm</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.npmjs.com/package/react-puzzle-confirm</span>
+    </div>
+    <a href="https://www.npmjs.com/package/react-puzzle-confirm" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>I always appreciate it when someone has the time to write good documentation on how to use something, and this component had just that, as well as a demo site showing you the component in action. Another great thing is this component had zero dependencies, meaning I only needed this one npm node package in order to build this component. This was a major blessing as well, as in the past I can remember some components, having lots and lots of dependencies, which will slow down the build process.
+The other super cool thing about this particular react captcha component is <strong>this react component did not require any tokens, or registering to a provider such as google, as this module is using CSS to complete the captcha</strong>. To me this was the perfect choice of component for me to build, and this really would prove a human has completed the action, to prevent someone trying to spam your dashboard, depending if you are hosting something externally.</p>
+<doc-anchor-target id="github-template">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#github-template">#</doc-anchor-trigger>
+        <span>Github Template <span class="docs-emoji">&#x1F47E;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Super Important You Need This</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/ironmansoftware/universal-dashboard-component</span>
+    </div>
+    <a href="https://github.com/ironmansoftware/universal-dashboard-component" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>The next section on building the custom component relies on you having a local copy of this repository which is a template you can use to convert any react component into a Powershell Universal dashboard component. I mean how amazing is that. You can convert something written in a completely different language and make it work with native Powershell commands, using Powershell. It still blows my mind <strong>how amazing this is, as now there so many possibilities on what you can now display in your dashboard</strong>.</p>
+<doc-anchor-target id="building-the-component">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#building-the-component">#</doc-anchor-trigger>
+        <span>Building The Component <span class="docs-emoji">&#x1F6A7;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>There is an outline of how to build a custom component here:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Official Documentation</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://docs.powershelluniversal.com/userinterfaces/dashboards/components/building-custom-components</span>
+    </div>
+    <a href="https://docs.powershelluniversal.com/userinterfaces/dashboards/components/building-custom-components" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Further official documentation can also be found on the blog on the ironman software site. This documentation personally made more sense to me:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">More official documentation</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://blog.ironmansoftware.com/universal-dashboard-custom-components/</span>
+    </div>
+    <a href="https://blog.ironmansoftware.com/universal-dashboard-custom-components/" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Even though I had previously built a good amount I think 90+ custom components, that was using a different technique, as the software has since been updated to use a newer version of react, and so the build method changed. Honestly this change has given a ginormous improvement in the time it takes to build the custom component. When I was building these custom components on my x86 laptop, it was taking sometimes up to 20 minutes or longer to build the component depending on the amount of dependencies the component had. However using this new build technique it only takes about 5-10 seconds! Yes seconds not minutes, so using this new method is a massive time saver in itself.</p>
+<doc-anchor-target id="component-jsx-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#component-jsx-file">#</doc-anchor-trigger>
+        <span>Component JSX File <span class="docs-emoji">&#x1F5C3;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>So there are a fair few good files you need to edit in some shape or form to build a component, I think it would be a good idea for me to document this process to show how simple it really is. Before I could edit this JSX file within the <strong>components</strong> folder I needed to make sure I had installed the <strong>npm pacakge for this react component</strong> I did this by copying the command from npmjs.com</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">npm i react-puzzle-confirm</code></pre>
+</doc-codeblock></div>
+<p>So once that was installed, and I had renamed the <strong>.PSD1 and .PSM1</strong> file to the module name I wanted. I then edited the <strong>.PSD1 file to include the RootModule as the newly named .PSM1 file</strong>, I edited the <strong>component.build.ps1 file to copy the newly named modules</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">	Copy-Item $PSScriptRoot\UDSliderCaptcha.psd1 $OutputPath
+	Copy-Item $PSScriptRoot\UDSliderCaptcha.psm1 $OutputPath</code></pre>
+</doc-codeblock></div>
+<p>also edited line 20 in the <strong>webpack.config.js</strong> file to be</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">library: 'udslidercaptcha'</code></pre>
+</doc-codeblock></div>
+<p>Within the <strong>components</strong> folder there is an <strong>index.js</strong> file my edited file looked like</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">import UDSliderCaptcha from './component';
+UniversalDashboard.register(&quot;udslidercaptcha&quot;, UDSliderCaptcha);</code></pre>
+</doc-codeblock></div>
+<p>Please <strong>keep case-sensitive lower-case for the webpack.config.js file</strong> which then reflects what is typed as first arguement within the <strong>parenthesis</strong> as shown above.</p>
+<p>Once you have made all these edits to the existing template files, and installed the npm package and all dependencies (in this case I only had one package to install as no dependencies) it is time to construct the actual component that will be displayed on the dashboard. This is done by editing the <strong>component.jsx file witin the components folder within the github template you downloaded</strong>. This is my final edited component.jsx file:-</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">import React, { useState } from &quot;react&quot;;
+import ReactDOM from &quot;react-dom&quot;;
+import ReactPuzzleConfirm from &quot;react-puzzle-confirm&quot;;
+import &quot;react-puzzle-confirm/react-puzzle-confirm.css&quot;;
+import { withComponentFeatures } from 'universal-dashboard';
+
+const UDSliderCaptcha = props =&gt; {
+  const [showModal, setShowModal] = useState(false);
+
+  return showModal ? (
+    &lt;ReactPuzzleConfirm
+      onClose={() =&gt; setShowModal(false)}
+      onSuccess={() =&gt; setShowModal(false)}
+      onFail={() =&gt; console.log(&quot;failed&quot;)}
+      title={props.title}
+      sliderTitle={props.sliderTitle}
+      failMessage={props.failMessage}
+      successMessage={props.successMessage}
+      closeButtonLabel=&quot;Close&quot;
+      refrefButtonLabel={props.refrefButtonLabel}
+      disableRefreshIdleState={false}
+    /&gt;
+  ) : (
+    &lt;button className=&quot;show__modal&quot; onClick={() =&gt; setShowModal(true)}&gt;
+      {props.modalText}
+    &lt;/button&gt;
+  );
+}
+
+export default withComponentFeatures(UDSliderCaptcha)</code></pre>
+</doc-codeblock></div>
+<p>So VSCode was not complaining about any of the code above, so now I needed to edit the **.PSM1 and .PSD1 file to finish this component off before running <strong>invoke-build</strong> so this is my final <strong>PSD1 file</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">#
+# Module manifest for module 'UDSliderCaptcha'
+#
+# Generated by: adam bacon
+#
+# Generated on: 03/09/2022
+#
+
+@{
+
+# Script module or binary module file associated with this manifest.
+RootModule = 'UDSliderCaptcha.psm1'
+
+# Version number of this module.
+ModuleVersion = '1.1.0'
+
+# Supported PSEditions
+# CompatiblePSEditions = @()
+
+# ID used to uniquely identify this module
+GUID = '76de2c49-86a9-4b58-9247-edbe35fed09a'
+
+# Author of this module
+Author = 'psdevuk'
+
+# Company or vendor of this module
+CompanyName = 'Home'
+
+# Copyright statement for this module
+Copyright = '(c) adamr. All rights reserved.'
+
+# Description of the functionality provided by this module
+ Description = 'A simple slider captcha to prove a human is on the other-end'
+
+# Minimum version of the PowerShell engine required by this module
+# PowerShellVersion = ''
+
+# Name of the PowerShell host required by this module
+# PowerShellHostName = ''
+
+# Minimum version of the PowerShell host required by this module
+# PowerShellHostVersion = ''
+
+# Minimum version of Microsoft .NET Framework required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
+# DotNetFrameworkVersion = ''
+
+# Minimum version of the common language runtime (CLR) required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
+# ClrVersion = ''
+
+# Processor architecture (None, X86, Amd64) required by this module
+# ProcessorArchitecture = ''
+
+# Modules that must be imported into the global environment prior to importing this module
+# RequiredModules = @()
+
+# Assemblies that must be loaded prior to importing this module
+# RequiredAssemblies = @()
+
+# Script files (.ps1) that are run in the caller's environment prior to importing this module.
+# ScriptsToProcess = @()
+
+# Type files (.ps1xml) to be loaded when importing this module
+# TypesToProcess = @()
+
+# Format files (.ps1xml) to be loaded when importing this module
+# FormatsToProcess = @()
+
+# Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
+# NestedModules = @()
+
+# Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
+FunctionsToExport = 'New-UDSliderCaptcha'
+
+# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
+CmdletsToExport = '*'
+
+# Variables to export from this module
+VariablesToExport = '*'
+
+# Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
+AliasesToExport = '*'
+
+# DSC resources to export from this module
+# DscResourcesToExport = @()
+
+# List of all modules packaged with this module
+# ModuleList = @()
+
+# List of all files packaged with this module
+# FileList = @()
+
+# Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
+PrivateData = @{
+
+ PSData = @{
+
+        # Tags applied to this module. These help with module discovery in online galleries.
+         Tags = @('universaldashboard','ud-dashboard','PowershellUniversal','Captcha')
+
+        # A URL to the license for this module.
+        # LicenseUri = ''
+
+        # A URL to the main website for this project.
+         ProjectUri = 'https://github.com/psDevUK/UDSliderCaptcha'
+
+        # A URL to an icon representing this module.
+         IconUri = 'https://raw.githubusercontent.com/psDevUK/UDSliderCaptcha/main/UDSliderCaptcha.gif'
+
+        # ReleaseNotes of this module
+        # ReleaseNotes = ''
+
+        # Prerelease string of this module
+        # Prerelease = ''
+
+        # Flag to indicate whether the module requires explicit user acceptance for install/update/save
+        # RequireLicenseAcceptance = $false
+
+        # External dependent modules of this module
+        # ExternalModuleDependencies = @()
+
+    } # End of PSData hashtable
+
+
+} # End of PrivateData hashtable
+
+# HelpInfo URI of this module
+ HelpInfoURI = 'https://github.com/psDevUK/UDSliderCaptcha/blob/main/README.md'
+
+# Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
+# DefaultCommandPrefix = ''
+
+}</code></pre>
+</doc-codeblock></div>
+<p>To make the actual <strong>cmdlet behind this component you need to edit the pre-defined function in the .PSM1 file</strong> so this is my finished <strong>.PSM1 before running the invoke-build</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">$IndexJs = Get-ChildItem &quot;$PSScriptRoot\index.*.bundle.js&quot;
+$AssetId = [UniversalDashboard.Services.AssetService]::Instance.RegisterAsset($IndexJs.FullName)
+
+function New-UDSliderCaptcha {
+    &lt;#
+    .SYNOPSIS
+    Creates a new component
+    
+    .DESCRIPTION
+    Gives you a captcha puzzle to fit one bit to prove a human on other end
+    
+
+    .EXAMPLE
+    New-UDSliderCaptcha'
+    #&gt;
+    
+    param(
+        [Parameter()]
+        [string]$Id = (New-Guid).ToString(),
+        [Parameter()]
+        [string]$Title = &quot;Please complete the jigsaw captcha&quot;,
+        [Parameter()]
+        [string]$SliderTitle = &quot;Place jigsaw in correct position&quot;,
+        [Parameter()]
+        [string]$FailMessage = &quot;Please try again&quot;,
+        [Parameter()]
+        [string]$SuccessMessage = &quot;Success&quot;,
+        [Parameter()]
+        [string]$RefreshLabel = &quot;Refresh&quot;
+    )
+
+    End {
+        @{
+            assetId = $AssetId 
+            isPlugin = $true 
+            type = &quot;udslidercaptcha&quot;
+            id = $Id
+
+            title=$Title
+            sliderTitle=$SliderTitle
+            failMessage=$FailMessage
+            successMessage=$SuccessMessage
+            refrefButtonLabel=$RefreshLabel
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="ready-steady-go">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ready-steady-go">#</doc-anchor-trigger>
+        <span>Ready, Steady, Go! <span class="docs-emoji">&#x1F6A6;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>So once you have followed the above, you are now ready to run:-</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">invoke-build</code></pre>
+</doc-codeblock></div>
+<p><strong>As long as you read the official documentation on building a custom component you would have already downloaded all the prerequisite modules and software required to build custom components</strong>. <strong>I did find I needed to also install the psake module as well</strong>. This process literally took 10 seconds or less. As long as you do not get any errors, and the process completes then within the <strong>output directory</strong> you will have you brand-new custom component you built. My output directory now contained the following four files <strong>index.73fa2acffb0788575395.bundle.js,index.73fa2acffb0788575395.bundle.map,UDSliderCaptcha.psd1,UDSliderCaptcha.psm1</strong>. Next stage was to now test this in a simple dashboard, I made a directory called <strong>UDSliderCaptcha</strong> within <em><em>C:\Program Files\WindowsPowerShell\Modules*</em> and copied these newly created files into this new folder directory **C:\Program Files\WindowsPowerShell\Modules\UDSliderCaptcha*</em>. I restarted the <strong>PowershellUniversal service</strong> then logged into the main portal. Verified the module was being picked up by the software, by searching the available modules within the program. Once I verified my new module was included, I then did a test on the dashboard.</p>
+<p><figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDSliderCaptcha/main/UDSliderCaptcha.gif" alt="The result was just as planned" />
+    <figcaption class="caption">The result was just as planned</figcaption>
+</figure>
+</p>
+<p>I now had a fully working react custom component loaded into the Powershell Universal dashboard I had created. I then verified all the parameters worked, which they did then it was time to publish this module to the Powershell Gallery. Please note to include <strong>ud-component</strong> within the module tags to enable your custom component to be found on the market place exclusive to this product.</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link to this module on marketplace</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://marketplace.universaldashboard.io/Dashboard/UDSliderCaptcha</span>
+    </div>
+    <a href="https://marketplace.universaldashboard.io/Dashboard/UDSliderCaptcha" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="that-is-how-this-powershell-module-was-done-till-next-time-take-care">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#that-is-how-this-powershell-module-was-done-till-next-time-take-care">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A5;</span> That is how this Powershell module was done. Till next time, take care</span>
+    </h2>
+</doc-anchor-target>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udimagezoom/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">UD​Image​Zoom</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udlottieplayer/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">UD​Lottie​Player</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "UDSliderCaptcha", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>

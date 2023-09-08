@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.3.0.732137743534">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.3.0">
+
+    <!-- Primary Meta Tags -->
+    <title>UDTestimonial Powershell Universal Component Module &#128150;</title>
+    <meta name="title" content="UDTestimonial Powershell Universal Component Module 💖">
+    <meta name="description" content="Powershell Universal Component to display a card with a testimonial written as the main content, with a nice picture embedded into the top of the testimonial card" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adam-bacon.netlify.app/powershell-universal/udtestimonial/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-bacon.netlify.app/powershell-universal/udtestimonial/">
+    <meta property="og:title" content="UDTestimonial Powershell Universal Component Module 💖">
+    <meta property="og:description" content="Powershell Universal Component to display a card with a testimonial written as the main content, with a nice picture embedded into the top of the testimonial card">
+    <meta property="og:image" content="https://adam-bacon.netlify.app/presentations/imgs/meet.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adam-bacon.netlify.app/powershell-universal/udtestimonial/">
+    <meta property="twitter:title" content="UDTestimonial Powershell Universal Component Module 💖">
+    <meta property="twitter:description" content="Powershell Universal Component to display a card with a testimonial written as the main content, with a nice picture embedded into the top of the testimonial card">
+    <meta property="twitter:image" content="https://adam-bacon.netlify.app/presentations/imgs/meet.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=2.3.0.732137743534" rel="stylesheet" />
+
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=2.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.3.0.732137743534" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">My Powershell Blog</span>
+                            <span class="w-10 ml-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../imgs/powershell.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../imgs/powershelld.png">
+                            </span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="udtestimonial-powershell-universal-component-module" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#udtestimonial-powershell-universal-component-module">#</doc-anchor-trigger>
+        <span>UDTestimonial Powershell Universal Component Module <span class="docs-emoji">&#x1F496;</span></span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="https://twitter.com/psdevuk"><img class="object-cover" src="../../imgs/me.jpg"/></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="https://twitter.com/psdevuk">Adam Bacon</a></div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Powershell</div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Modules</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2022-09-20</span></div>
+</div>
+
+<p><figure class="content-center">
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2019%2F09%2F138874-crossed-avatar-press-hi.jpg&amp;f=1&amp;nofb=1" alt="Appreciation is great to recieve so show some more appreciation in your life" />
+    <figcaption class="caption">Appreciation is great to recieve so show some more appreciation in your life</figcaption>
+</figure>
+</p>
+<p>This is the underlying component which made all this possible:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Original React Component</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.npmjs.com/package/material-testimonial-card</span>
+    </div>
+    <a href="https://www.npmjs.com/package/material-testimonial-card" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>You can get yourself a copy of this module on the Powershell Gallery:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link To Download UDTestimonial Module</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.powershellgallery.com/packages/UDTestimonial/1.0.1</span>
+    </div>
+    <a href="https://www.powershellgallery.com/packages/UDTestimonial/1.0.1" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Here is the GitHub repository to this module which also includes all the project directories and files associated in the building of this component:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">GitHub Link to this UDTestimonial Repository</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/psDevUK/UDTestimonial</span>
+    </div>
+    <a href="https://github.com/psDevUK/UDTestimonial" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>A simple PNG showing the component on a Powershell Universal dashboard:-
+<figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDTestimonial/main/after.png" alt="How this looks in action" />
+    <figcaption class="caption">How this looks in action</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="showing-my-appreciation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#showing-my-appreciation">#</doc-anchor-trigger>
+        <span>Showing my appreciation</span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://cdn3.whatculture.com/images/2014/08/batman-superman-bromance.jpg" alt="Best pic I could find to show my appreciation" />
+    <figcaption class="caption">Best pic I could find to show my appreciation</figcaption>
+</figure>
+</p>
+<p>So as I been using this product since it first came out, I thought this is something else that is missing. Like yeah I could have done this using <code v-pre>New-UDCard</code> but isn&#x27;t it nicer when pretty much all the work is done already, and you have to just add the finishing touches?</p>
+<p>I totally get that some people may think this is over-kill, but I think it is another great feature to add to an already abundant choice of components built into the product.</p>
+<p>It is only human nature to be happy when someone else is happy about the thing you have done. Personally I have received thanks from various people in the Powershell community. These were proud moments knowing I done something good. So why not celebrate that goodness with a react component.</p>
+<p>One person I really want to give my thanks to, and really who this component was designed for is <strong>Adam Driscoll</strong>. He made all this possible, and I know there is a thriving community behind this software, but again personally I do not feel enough people are giving appreciation, for just how amazing this is, and the endless possibilities it gives you. So here is my thanks <strong>Adam Driscoll</strong> you the man!</p>
+<doc-anchor-target id="demo-dashboard">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#demo-dashboard">#</doc-anchor-trigger>
+        <span>Demo Dashboard <span class="docs-emoji">&#x1F447;</span></span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">New-UDDashboard -Title 'UDTestimonial' -Content {
+    New-UDRow -Columns {
+    New-UDColumn -Content {
+        New-UDStyle -Style '
+        .jss1 {
+         background: #b3b3ff;
+         box-shadow: 3px 3px 9px #000000;
+         border-radius: 12px;
+        }
+            .jss2 {
+    top: -64px;
+    width: 140px;
+    height: 140px;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+}
+        .jss3 {
+            width: 120%;
+            height: 120%;
+        }
+        .jss5 h3 {
+            color: #3314dd;
+        }
+        .jss4 &gt; p:before {
+            color: #3314dd;
+            font-size: 3rem;
+            float: left;
+            padding-top: 5px;
+        }
+        .jss4 &gt; p {
+    margin: 0;
+    line-height: 20px;
+    padding-top: 25px;
+}
+        .jss4 &gt; p:after {
+            color: #3314dd;
+            font-size: 3rem;
+            padding-top: 8px;
+            padding-left: 10px;
+        }
+        .jss4 {
+                font-weight: bold;
+                font-family: emoji;
+        }
+        .jss5 p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-style: inherit;
+        }
+        ' -Content {
+New-UDTestimonial -Name &quot;Adam Bacon&quot; -Image &quot;https://adam-bacon.netlify.app/imgs/me.jpg&quot; -Text &quot;I been using Powershell for a long time, but nothing has ever come close to giving me the creativity and ability to design and produce amazing things like Powershell Universal does. This is a must have bit of software for anyone wanting to improve the way things are currently done.&quot; -Project &quot;Powershell Universal&quot;
+        }
+
+} -LargeSize 4
+  New-UDColumn -Content {
+      New-UDTestimonial -Name &quot;Adam Bacon&quot; -Image &quot;https://adam-bacon.netlify.app/imgs/me.jpg&quot; -Text &quot;I been using Powershell for a long time, but nothing has ever come close to giving me the creativity and ability to design and produce amazing things like Powershell Universal does. This is a must have bit of software for anyone wanting to improve the way things are currently done.&quot; -Project &quot;Powershell Universal&quot;
+  } -LargeSize 4
+} 
+}</code></pre>
+</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDTestimonial/main/after.png" alt="First card with styling applied" />
+    <figcaption class="caption">First card with styling applied</figcaption>
+</figure>
+</p>
+<p><figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDTestimonial/main/before.png" alt="How this component will look by default" />
+    <figcaption class="caption">How this component will look by default</figcaption>
+</figure>
+</p>
+<p>I just tweaked some CSS attributes to get the desired look I was after which is shown in the first picture.</p>
+<doc-anchor-target id="please-look-at-new-udstyle">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#please-look-at-new-udstyle">#</doc-anchor-trigger>
+        <span>Please look at New-UDStyle</span>
+    </h2>
+</doc-anchor-target>
+<p>As you may have spotted, in the demo dashboard I have used two <code v-pre>New-UDTestimonial</code> objects however they look quite different, how is this possible?  By using the built-in <code v-pre>New-UDStyle</code> to give me complete control over how the component displays. This is done by me being able to pass <strong>pure CSS</strong> as the <strong>Style</strong> being applied to the component specified in the <strong>Content</strong>.</p>
+<p>So how did you know how to adjust just those CSS styles? <strong>Simple answer I didn&#x27;t know</strong>.  So how did you do it then?</p>
+<p>Quite simple dear reader. I right clicked on the part of the component I was interested in, then selected inspect element. This then showed the developer tools of the CSS styles being applied. I then simply spent sometime tweaking the various values within the browser to see the immediate effects of the values I was changing. Once happy with the changes, I copied the rule from the browser and then pasted it into the <strong>style</strong> parameter of <strong>New-UDStyle</strong>.  Yeah I did spend a bit of time figuring these exact settings out, but to me this is now looking exactly how I wanted it to look.</p>
+<p>Again I could have possibly included the CSS as properties within the JSX component file. However I want to encourage users of this software to try to learn new skills, look at playing with CSS values and adding new properties and values, to end up with the desired result you are after.</p>
+<p>Originally I thought the component looked nice enough, but I know what I may think is nice, someone else might think is garbage, until you can tweak it enough to their pleasing. I have said it enough times, but that is why I think the possibilities with this software are limitless. You can really do what-ever it is you want.</p>
+<doc-anchor-target id="the-project">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-project">#</doc-anchor-trigger>
+        <span>The Project <span class="docs-emoji">&#x1F3D7;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>This is the final version of the component JSX file:-</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">import React from 'react';
+import TestimonialCard from 'material-testimonial-card';
+import { withComponentFeatures } from 'universal-dashboard';
+
+const UDTestimonial = props =&gt; {
+  return (
+  &lt;div key={props.id}&gt;
+    &lt;TestimonialCard
+        name={props.name}
+        image={props.image}
+        content={props.content}
+        project={props.project}
+    /&gt;
+  &lt;/div&gt;
+  );
+}
+
+export default withComponentFeatures(UDTestimonial)</code></pre>
+</doc-codeblock></div>
+<p>I was feeling on a bit of a roll, as I had just finished building the <strong>New-UDFAQ</strong> module. As this particular component had zero dependencies, and was easy enough for me to understand. This literally did not take very long at all from start to finish. In-fact customising the CSS was the longest thing about this project.</p>
+<doc-anchor-target id="powershell-function">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#powershell-function">#</doc-anchor-trigger>
+        <span>Powershell Function <span class="docs-emoji">&#x1F913;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>To make the actual <strong>cmdlet behind this component you need to edit the pre-defined function in the .PSM1 file</strong> so this is my finished <strong>.PSM1 before running the invoke-build</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">$IndexJs = Get-ChildItem &quot;$PSScriptRoot\index.*.bundle.js&quot;
+$AssetId = [UniversalDashboard.Services.AssetService]::Instance.RegisterAsset($IndexJs.FullName)
+
+function New-UDTestimonial {
+    &lt;#
+    .SYNOPSIS
+    Creates a new component
+    
+    .DESCRIPTION
+    Creates a new component
+    
+    .PARAMETER Id
+    The ID of this editor
+
+    .PARAMETER Name
+    The name to be displayed who the testimonial is from this is a string parameter
+
+    .PARAMETER Image
+    The image to be displayed who the testimonial is from this is a string parameter
+
+    .PARAMETER Text
+    Main testimonial text for the component, this is a string parameter
+
+    .EXAMPLE
+    New-UDTestimonial -Name &quot;Adam Bacon&quot; -Image &quot;https://adam-bacon.netlify.app/imgs/me.jpg&quot; -Text &quot;I been using Powershell for a long time, but nothing has ever come close to giving me the creativity and ability to design and produce amazing things with Powershell Universal. This is a must have bit of software for anyone wanting to improve the way things are currently done.&quot; -Project &quot;Powershell Universal&quot;
+    #&gt;
+    
+    param(
+        [Parameter()]
+        [string]$Id = (New-Guid).ToString(),
+        [Parameter()]
+        [string]$Name,
+        [Parameter()]
+        [string]$Image,
+        [Parameter()]
+        [string]$Text,
+        [Parameter()]
+        [string]$Project
+    )
+
+    End {
+        @{
+            assetId = $AssetId 
+            isPlugin = $true 
+            type = &quot;udtestimonial&quot;
+            id = $Id
+
+            name = $Name
+            image = $Image
+            content = $Text
+            project = $Project
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Read The Help</h5>
+<p>Even if you just glanced through the above code, you should hopefully notice that I did include a decent help file for each parameter so here is the help just on the parameters</p>
+        </div>
+    </div>
+</div>
+<p>There are only four additonal parameters in total. The <strong>Name parameter</strong>, this will be displayed at the bottom, this is the name of who has given the testimonial. The <strong>Image parameter</strong> allows you to specify a string path to an image, I choose to use a URL. The <strong>Text parameter</strong> is the main text that will be displayed on the testimonial card. Last but not least is the <strong>Project parameter</strong> which is the project the testimonial refers to, this appear underneath the name displayed within the testimonial card.</p>
+<doc-anchor-target id="css-breakdown">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#css-breakdown">#</doc-anchor-trigger>
+        <span>CSS Breakdown</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-css"><code v-pre class="language-css">        .jss1 {
+         background: #b3b3ff;
+         box-shadow: 3px 3px 9px #000000;
+         border-radius: 12px;
+        }
+            .jss2 {
+    top: -64px;
+    width: 140px;
+    height: 140px;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+}
+        .jss3 {
+            width: 120%;
+            height: 120%;
+        }
+        .jss5 h3 {
+            color: #3314dd;
+        }
+        .jss4 &gt; p:before {
+            color: #3314dd;
+            font-size: 3rem;
+            float: left;
+            padding-top: 5px;
+        }
+        .jss4 &gt; p {
+    margin: 0;
+    line-height: 20px;
+    padding-top: 25px;
+}
+        .jss4 &gt; p:after {
+            color: #3314dd;
+            font-size: 3rem;
+            padding-top: 8px;
+            padding-left: 10px;
+        }
+        .jss4 {
+                font-weight: bold;
+                font-family: emoji;
+        }
+        .jss5 p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-style: inherit;
+        }</code></pre>
+</doc-codeblock></div>
+<p>The <strong>.jss1</strong> is refering to the main card where I am setting the colour of the main card, the box-shadow settings to be applied to the main card, and finally rounding those sharp corner edges.</p>
+<p>The <strong>.jss5 h3</strong> is refering to the name being displayed, so I have set the colour from the default orange it applies to this custom blue colour.</p>
+<p>The <strong>.jss2</strong> and <strong>.jss3</strong> both refer to the image that is displayed in the middle at the top of the card. The size, padding, positioning and a few other options were set here, to make the picture display slightly bigger than the default settings.</p>
+<p>The <strong>.jss4 &gt; p:before</strong> and <strong>.jss4 &gt; p:after</strong> refer to the speech marks enclosing the main text within the card. A few changes were made here to get the position and font looking how I wanted it to look.</p>
+<p>The <strong>.jss4 &gt; p</strong> is refering to the main text part being displayed on the card and the <strong>.jss4</strong> refering to the speech marks surrounding the main text</p>
+<p>The <strong>.jss5 P</strong> is refering to the <strong>Project parameter</strong> text you specified, which will appear at the very bottom of the card.</p>
+<doc-anchor-target id="marketplace-link">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#marketplace-link">#</doc-anchor-trigger>
+        <span>MarketPlace link</span>
+    </h2>
+</doc-anchor-target>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link to this module on marketplace</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://marketplace.universaldashboard.io/Dashboard/UDTestimonial</span>
+    </div>
+    <a href="https://marketplace.universaldashboard.io/Dashboard/UDTestimonial" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="that-is-how-this-powershell-module-was-done-till-next-time-take-care">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#that-is-how-this-powershell-module-was-done-till-next-time-take-care">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A5;</span> That is how this Powershell module was done. Till next time, take care</span>
+    </h2>
+</doc-anchor-target>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udfaq/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">UDFAQ</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udlinkpreview/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">UD​Link​Preview</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "UDTestimonial", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>

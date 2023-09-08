@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.3.0.732137743534">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.3.0">
+
+    <!-- Primary Meta Tags -->
+    <title>UDFullScreen Powershell Universal Component Module &#128250;</title>
+    <meta name="title" content="UDFullScreen Powershell Universal Component Module 📺">
+    <meta name="description" content="Powershell Universal Component to display in full screen mode, like when watching a video in full screen on the internet." />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adam-bacon.netlify.app/powershell-universal/udfullscreen/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-bacon.netlify.app/powershell-universal/udfullscreen/">
+    <meta property="og:title" content="UDFullScreen Powershell Universal Component Module 📺">
+    <meta property="og:description" content="Powershell Universal Component to display in full screen mode, like when watching a video in full screen on the internet.">
+    <meta property="og:image" content="https://adam-bacon.netlify.app/presentations/imgs/meet.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adam-bacon.netlify.app/powershell-universal/udfullscreen/">
+    <meta property="twitter:title" content="UDFullScreen Powershell Universal Component Module 📺">
+    <meta property="twitter:description" content="Powershell Universal Component to display in full screen mode, like when watching a video in full screen on the internet.">
+    <meta property="twitter:image" content="https://adam-bacon.netlify.app/presentations/imgs/meet.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=2.3.0.732137743534" rel="stylesheet" />
+
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=2.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.3.0.732137743534" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">My Powershell Blog</span>
+                            <span class="w-10 ml-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../imgs/powershell.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../imgs/powershelld.png">
+                            </span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="udfullscreen-powershell-universal-component-module" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#udfullscreen-powershell-universal-component-module">#</doc-anchor-trigger>
+        <span>UDFullScreen Powershell Universal Component Module <span class="docs-emoji">&#x1F4FA;</span></span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="https://twitter.com/psdevuk"><img class="object-cover" src="../../imgs/me.jpg"/></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="https://twitter.com/psdevuk">Adam Bacon</a></div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Powershell</div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Modules</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2022-09-26</span></div>
+</div>
+
+<p><figure class="content-center">
+    <img src="https://i1.wp.com/www.cuevadelobo.com/wp-content/uploads/2014/03/Invincible-109-4-e1395963227930.jpg?resize=800%2C737&amp;ssl=1" alt="Sometimes bigger is better" />
+    <figcaption class="caption">Sometimes bigger is better</figcaption>
+</figure>
+</p>
+<p>This is the underlying component which made all this possible:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Original React Component</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.npmjs.com/package/react-full-screen</span>
+    </div>
+    <a href="https://www.npmjs.com/package/react-full-screen" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>You can get yourself a copy of this module on the Powershell Gallery:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link To Download UDFullScreen Module</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.powershellgallery.com/packages/udfullscreen/1.0.1</span>
+    </div>
+    <a href="https://www.powershellgallery.com/packages/udfullscreen/1.0.1" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Here is the GitHub repository to this module which also includes all the project directories and files associated in the building of this component:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">GitHub Link to this UDFullScreen Repository</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/psDevUK/UDFullScreen</span>
+    </div>
+    <a href="https://github.com/psDevUK/UDFullScreen" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>A simple GIF showing the component in action on a Powershell Universal dashboard:-
+<figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDFullScreen/main/UDFullScreen.gif" alt="How this looks in action" />
+    <figcaption class="caption">How this looks in action</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="super-sunday">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#super-sunday">#</doc-anchor-trigger>
+        <span>Super Sunday <span class="docs-emoji">&#x1F60F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://vignette.wikia.nocookie.net/imagecomics/images/d/d9/EvilMarks.jpg/revision/latest?cb=20150817024132" alt="Giving myself sometime away from the screen let me attack this fro ma brand-new angle" />
+    <figcaption class="caption">Giving myself sometime away from the screen let me attack this fro ma brand-new angle</figcaption>
+</figure>
+</p>
+<p>So what makes this a <strong>Super Sunday</strong>..? Well apart from it being the local car-boot which I do enjoy going to, it is a super Sunday because I managed to get another component smashed for <strong>Powershell Universal</strong> and what makes this even better, is that this particular component was not even my idea.</p>
+<p>See I got nominated shall we say by a fellow Powershell Universal user. I have worked with this chap before on the google chart components I did a good while back, and I think he is a sound bloke. Just to get the feel for the true <strong>bromance</strong> on the forums going on then check out the origins of this component request right here:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Nominated for the task</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://forums.ironmansoftware.com/t/custom-component-add-react-fullscreen-support/7829/1</span>
+    </div>
+    <a href="https://forums.ironmansoftware.com/t/custom-component-add-react-fullscreen-support/7829/1" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Not sure if like me when you was really young, you had mates that would <strong>double-dare</strong> you to do something potentially dangerous, just so they could see if it was safe for themselves to do.  Although I did not feel any danger was directly involved with this, I did feel like it was a double-dare moment from childhood past.</p>
+<p>Once I got the component confirmed it was time to put on my mask and cape, and go make something awesome. Or that was the plan. The link I was sent lead me to a GitHub repository right here:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">GitHub Link to what was wanted</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/snakesilk/react-fullscreen#readme</span>
+    </div>
+    <a href="https://github.com/snakesilk/react-fullscreen#readme" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Looking at the readme provided I saw it was using the <code v-pre>react-full-screen</code> package. How did I know this, well it is shown right at the top of the JSX file you need to build
+<code v-pre>import { FullScreen, useFullScreenHandle } from &quot;react-full-screen&quot;;</code>
+Next step was go check this package out, as I knew the exact name of the package I went to use <strong>npmjs.com</strong> and this lead me to the following page:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">The Component I needed to build</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.npmjs.com/package/react-full-screen</span>
+    </div>
+    <a href="https://www.npmjs.com/package/react-full-screen" class="absolute block inset-0"></a>
+</div>
+</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Just Saying</h5>
+<p>Honestly it has been really tough to find useful components I believe are worthy of bringing to <strong>Powershell Universal</strong>, this is down to having built a load of custom components already in the past, and the fact <strong>there are now so many built-in components to choose from with-in Powershell Universal, that you are already spoilt for choice</strong> This was requested by the community hence I did this component.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="i-have-never-thought-about-this">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#i-have-never-thought-about-this">#</doc-anchor-trigger>
+        <span>I Have Never Thought About This <span class="docs-emoji">&#x1F9E0;</span></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/04/Omni-Man-Invincible.jpg" alt="Time to fly into action" />
+    <figcaption class="caption">Time to fly into action</figcaption>
+</figure>
+</p>
+<p>For me as I have said many times before, that this software <strong>Powershell Universal</strong> gives you unlimited possiblities on what you can do and display with the code you produce. The product has matured a lot since it was first released, and as mentioned before has a thriving community behind the product, who like me love using it. So as this product has been about for a good few years now, over that time-period various requests and moving to a new React component library Material-UI a lot more components have come as standard out-the-box.</p>
+<p>I really do believe this is a magical bit of software to give you that opportunity to express yourself through the code you write. I am not a web-designer by trade, I have dabbled in doing bits here and there, and maintaining IIS servers. However I have never been employed as a front-end designer. So for me to try and start coding that sort of thing would take a lot of time to learn new tricks, and for me would go against just using Powershell cmdlets for the dashboards I build. What I am on about it the exact component I just built.</p>
+<p>Just to prove anything is possible I took on the challenge of building this component to use within Powershell Universal. It is a bit odd, as I have not thought of building a full-screen component. Like probably just thinking I did not know one existed. It just does not come-up in the search results I get when looking for components. However it is an exceedingly good idea <span class="docs-emoji">&#x1F4A1;</span> to have an option to display stuff in full screen, especially if you are displaying the amazing dashboard you built on a TV on the wall, or you want to give a presentation on your dashboard, then yeah this is the component for you.</p>
+<doc-anchor-target id="package-problems">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#package-problems">#</doc-anchor-trigger>
+        <span>Package Problems <span class="docs-emoji">&#x1F97A;</span></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://pbs.twimg.com/media/FcFpTOqaUAAtKYF.jpg:large" alt="Remember when coding stay calm and focused else you could end up like this" />
+    <figcaption class="caption">Remember when coding stay calm and focused else you could end up like this</figcaption>
+</figure>
+</p>
+<p>Getting the package dependencies was not the issue, as this pacakge only needed two additional pacakages to make the component work. The issue was I could not get the component to originally work after building it from the demo-code supplied on npmjs. So as you probably know the internet can bee a great tool to turn to when you need a different example of the code. So I turned to <strong>codesandbox</strong> and I found this particular demo:-</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Online demo of the component</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://codesandbox.io/s/g4y7l0?file=/src/App.js</span>
+    </div>
+    <a href="https://codesandbox.io/s/g4y7l0?file=/src/App.js" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Using this example I was able to get a fully working version of the component, based on this demo code supplied in the link above.</p>
+<p>I wanted to customise the component a little, just to add my sprinkle of uniqueness to it. So instead of using the button icon from the code I ended up using the <strong>react-icons</strong> and selecting the full-screen and normal-screen icons from this package. I then added props to the <strong>CSS styling</strong> to allow you as the end-user to the customise the full-screen and normal-screen buttons to your exact needs as parameters.</p>
+<p>However now the problem was I could only display text in this component. Like I could not figure out how I was going to bind child Powershell Universal components to this component. This was doing my head-in as I was so close to the finish-link, but this would not be a great component if you could only display static text in full-screen mode it kind of goes against the whole-point of these dashboards being able to display beautiful content if you cannot view them in the full-screen mode, but only boring plain static text.</p>
+<doc-anchor-target id="don-t-give-up">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#don-t-give-up">#</doc-anchor-trigger>
+        <span>Don&#x27;t Give Up <span class="docs-emoji">&#x1F62B;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>It is too easy in life to give up if something does not work out first-time. Not just in coding, but in general. I guess that is why we have become such a throw-away society, as you can just replace things, and give-up on them, instead of trying to figure out what is wrong with it.</p>
+<p>I did not manage to get the <strong>content</strong> displaying within the component the first-time. Would of been easy to say nope it is not possible. But I knew this could be possible, I just did not quite know how. I tried some usual methods I thought would work, but each time it kept failing.</p>
+<p>Not sure what caused this spark in my brain but I thought why not look at the <strong>universal-dashboard</strong> node package that is used as part of the build process. Behold there was a <strong>readme</strong> that contain this golden nugget of information</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>render (function)</h5>
+<p>This function is used to render other Universal Dashboard components. This might be handy if you support child components for your component.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">const MyComponent = props =&gt; {
+    return props.children.map(x =&gt; props.render(x))
+}
+
+export withComponentFeatures(MyComponent);  </code></pre>
+</doc-codeblock></div>
+        </div>
+    </div>
+</div>
+<p>Okay so now I had this bit of information time to make it work...Well not being a react developer this seemed slightly harder than I first expected, as I was trying to call it using</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{props.children.map(x =&gt; props.render(x))}</code></pre>
+</doc-codeblock></div>
+<p>Where I wanted the content to be displayed, however this just did not work. I did not want to give-up but I needed to go to bed as was already early-hours of Sunday morning by this point.</p>
+<doc-anchor-target id="eureka-moment">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#eureka-moment">#</doc-anchor-trigger>
+        <span>Eureka Moment <span class="docs-emoji">&#x1F386;</span></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://majorspoilers.com/wp-content/uploads/2008/12a/invincible_cov57.jpg" alt="The feeling of awesomeness was what I was feeling" />
+    <figcaption class="caption">The feeling of awesomeness was what I was feeling</figcaption>
+</figure>
+</p>
+<p>I was just getting ready to set off on a long drive, and just wanted to update the thread on this topic on the forum. Not sure why I did not think about this Saturday but thought there must be an example of how this is done on the installation I have on the Cloud machine I am running this off of. Searching around in the location you install <strong>Powershell Universal</strong> I was able to find the associated .MAP files for the components in use. Now again I do not know for like sure, but I believe the map file just compresses the output to remove any white-space and just give you just the guts-and-bones without all the pretty formatting. So this was not the easiest thing to read, but reading it gave me the exact answer I needed</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{UniversalDashboard.renderComponent(props.content)}</code></pre>
+</doc-codeblock></div>
+<p>I could not believe my luck. The render component was mentioned in that readme I found but this was showing me how it was used in an official component to link child Powershell Universal components.</p>
+<doc-anchor-target id="final-jsx-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#final-jsx-file">#</doc-anchor-trigger>
+        <span>Final JSX File <span class="docs-emoji">&#x1F3C1;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>Wow just one-line of code can make all the difference to a project. This is how my final JSX file for this component looks, which now allows you to bind child Powershell Universal components within this component.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">import React, { useCallback } from 'react';
+import { FullScreen, useFullScreenHandle } from &quot;react-full-screen&quot;;
+import { withComponentFeatures } from 'universal-dashboard';
+import { GoScreenFull } from &quot;react-icons/go&quot;;
+import { GoScreenNormal } from &quot;react-icons/go&quot;;
+const UDFullScreen = props =&gt; {
+
+  const handle = useFullScreenHandle();
+  return (
+    &lt;div key={props.id} className=&quot;UDFullScreen&quot;&gt;
+      &lt;button onClick={handle.enter} style={{ ['background-color']: props.buttonColor, ['border-radius']: &quot;8px&quot; }}&gt;
+        &lt;GoScreenFull style={{height: props.heightFull, width: props.widthFull}}/&gt;
+      &lt;/button&gt;
+      &lt;FullScreen handle={handle}&gt;
+          {handle.active &amp;&amp; (
+            &lt;button onClick={handle.exit} style={{ ['background-color']: props.buttonScolor, ['border-radius']: &quot;8px&quot; }}&gt;
+              &lt;GoScreenNormal style={{height: props.heightNormal, width: props.widthNormal}}/&gt;
+            &lt;/button&gt;
+          )}
+       {UniversalDashboard.renderComponent(props.content)}
+      &lt;/FullScreen&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default withComponentFeatures(UDFullScreen)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="demo-dashboard">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#demo-dashboard">#</doc-anchor-trigger>
+        <span>Demo Dashboard <span class="docs-emoji">&#x1F447;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>I was really happy with the dashboard I had designed for my last blog post. So why not just use this same dashboard to this demo, but with a slight twist.</p>
+<p>That twist is basically nesting that entire dashboard I did in my previous blog, as the <strong>-Content</strong> to be displayed as the <strong>content</strong> of the full-screen.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">New-UDDashboard -Title 'PowerShell Universal' -Content {
+
+New-UDFullScreen -Content {
+New-UDRow -Columns {
+New-UDColumn -Content {
+
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udimagezoom/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udslidercaptcha/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udlottieplayer/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udawesomeaudio/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udtextfit/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udtruncatetext/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udcolorful/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udlinkify/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udscrollprogress/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udtextloop/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udwizardry/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udreadtime/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udfaq/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDFullScreen -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udtestimonial/&quot;
+} -LargeSize 3
+}
+}
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="powershell-function">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#powershell-function">#</doc-anchor-trigger>
+        <span>Powershell Function <span class="docs-emoji">&#x1F913;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>To make the actual <strong>cmdlet behind this component you need to edit the pre-defined function in the .PSM1 file</strong> so this is my finished <strong>.PSM1 before running the invoke-build</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">$IndexJs = Get-ChildItem &quot;$PSScriptRoot\index.*.bundle.js&quot;
+$AssetId = [UniversalDashboard.Services.AssetService]::Instance.RegisterAsset($IndexJs.FullName)
+
+function New-UDFullScreen {
+    &lt;#
+    .SYNOPSIS
+    Creates a new component giving full screen ability
+    
+    .DESCRIPTION
+    Adds a button, to which you then add content, all then content within this function will then display in a full screen mode when the full-screen button is clicked
+    
+    .PARAMETER Id
+    The ID of this editor
+
+    .PARAMETER ButtonFullScreenColor
+    Enables you to set the color of the full-screen button, this is a string and defaulted to #7a7aff
+
+    .PARAMETER ButtonFullScreenHeight
+    Sets the height for the full-screen button. Defaulted to 3em
+
+    .PARAMETER ButtonFullScreenWidth
+    Sets the width for the full-screen button. Defaulted to 3em
+
+    .PARAMETER ButtonNormalScreenColor
+    Enables you to set the color of the normal-screen button, this is a string and defaulted to #7a7aff
+
+    .PARAMETER ButtonNormalScreenHeight
+    Sets height for the normal screen button, defaulted to 3em
+
+    .PARAMETER ButtonNormalScreenWidth
+    Sets width for the normal screen button, defaulted to 3em
+
+    .PARAMETER Content
+    Is a mandatory scriptblock parameter, to allow you to nest other dashboard components you want to display in full-screen
+    .EXAMPLE
+    New-UDFullScreen -Content { &quot;Everything in content block will be full screen when button clicked&quot; }
+    #&gt;
+    
+    param(
+        [Parameter()]
+        [string]$Id = (New-Guid).ToString(),
+        [Parameter()]
+        [string]$ButtonFullScreenColor = &quot;#7a7aff&quot;,
+        [Parameter()]
+        [string]$ButtonFullScreenHeight = &quot;3em&quot;,
+        [Parameter()]
+        [string]$ButtonFullScreenWidth = &quot;3em&quot;,
+        [Parameter()]
+        [string]$ButtonNormalScreenColor = &quot;#7a7aff&quot;,
+        [Parameter()]
+        [string]$ButtonNormalScreenHeight = &quot;3em&quot;,
+        [Parameter()]
+        [string]$ButtonNormalScreenWidth = &quot;3em&quot;,
+        [Parameter(Mandatory)]
+        [scriptblock]$Content
+    )
+
+    End {
+        @{
+            assetId      = $AssetId 
+            isPlugin     = $true 
+            type         = &quot;udfullscreen&quot;
+            id           = $Id
+
+            buttonColor  = $ButtonFullScreenColor
+            heightFull   = $ButtonFullScreenHeight
+            widthFull    = $ButtonFullScreenWidth
+            buttonScolor = $ButtonNormalScreenColor
+            heightNormal = $ButtonNormalScreenHeight
+            widthNormal  = $ButtonNormalScreenWidth
+            content      = $Content.Invoke()
+
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Read The Help</h5>
+<p>Even if you just glanced through the above code, you should hopefully notice that I did include a decent help for each parameter most parameters are for styling the buttons, think of this component like a New-UDCard component, anything you embed within the <strong>-content</strong> parameter will be displayed in full screen</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="marketplace-link">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#marketplace-link">#</doc-anchor-trigger>
+        <span>MarketPlace link <span class="docs-emoji">&#x1F92B;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link to this module on marketplace</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://marketplace.universaldashboard.io/Dashboard/UDFullScreen</span>
+    </div>
+    <a href="https://marketplace.universaldashboard.io/Dashboard/UDFullScreen" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="that-is-how-this-powershell-module-was-done-till-next-time-take-care">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#that-is-how-this-powershell-module-was-done-till-next-time-take-care">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A5;</span> That is how this Powershell module was done. Till next time, take care</span>
+    </h2>
+</doc-anchor-target>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udlinkpreview/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">UD​Link​Preview</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../presentations/eventmeetup/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Southampton Powershell Group</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "UDFullScreen", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>

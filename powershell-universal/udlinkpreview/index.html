@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.3.0.732137743534">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.3.0">
+
+    <!-- Primary Meta Tags -->
+    <title>UDLinkPreview Powershell Universal Component Module &#127873;</title>
+    <meta name="title" content="UDLinkPreview Powershell Universal Component Module 🎁">
+    <meta name="description" content="Powershell Universal Component to display amazing looking link previews. Turning plain boring hyperlinks into a beautiful preview of that webpage" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adam-bacon.netlify.app/powershell-universal/udlinkpreview/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-bacon.netlify.app/powershell-universal/udlinkpreview/">
+    <meta property="og:title" content="UDLinkPreview Powershell Universal Component Module 🎁">
+    <meta property="og:description" content="Powershell Universal Component to display amazing looking link previews. Turning plain boring hyperlinks into a beautiful preview of that webpage">
+    <meta property="og:image" content="https://adam-bacon.netlify.app/presentations/imgs/meet.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adam-bacon.netlify.app/powershell-universal/udlinkpreview/">
+    <meta property="twitter:title" content="UDLinkPreview Powershell Universal Component Module 🎁">
+    <meta property="twitter:description" content="Powershell Universal Component to display amazing looking link previews. Turning plain boring hyperlinks into a beautiful preview of that webpage">
+    <meta property="twitter:image" content="https://adam-bacon.netlify.app/presentations/imgs/meet.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=2.3.0.732137743534" rel="stylesheet" />
+
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=2.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.3.0.732137743534" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.3.0.732137743534" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">My Powershell Blog</span>
+                            <span class="w-10 ml-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../imgs/powershell.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../imgs/powershelld.png">
+                            </span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg>Github</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://twitter.com/psdevuk"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M3.25 4a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 01.75.75v3.19l3.72-3.72a.75.75 0 01.53-.22h10a.25.25 0 00.25-.25V4.25a.25.25 0 00-.25-.25H3.25zm-1.75.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 01-1.75 1.75h-9.69l-3.573 3.573A1.457 1.457 0 015 21.043V18.5H3.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg>Twitter</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://uk.linkedin.com/in/adam-bacon-t2022"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path fill-rule="evenodd" d="M20.226 7.25a9.498 9.498 0 10-3.477 12.976.75.75 0 01.75 1.299c-5.26 3.037-11.987 1.235-15.024-4.026C-.562 12.24 1.24 5.512 6.501 2.475 11.76-.562 18.488 1.24 21.525 6.501a10.956 10.956 0 011.455 4.826c.013.056.02.113.02.173v2.25a3.5 3.5 0 01-6.623 1.581 5.5 5.5 0 111.112-3.682.76.76 0 01.011.129v1.972a2 2 0 104 0v-1.766a9.452 9.452 0 00-1.274-4.733zM16 12a4 4 0 10-8 0 4 4 0 008 0z"/></g></g></svg>Linkedin</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="udlinkpreview-powershell-universal-component-module" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#udlinkpreview-powershell-universal-component-module">#</doc-anchor-trigger>
+        <span>UDLinkPreview Powershell Universal Component Module <span class="docs-emoji">&#x1F381;</span></span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="https://twitter.com/psdevuk"><img class="object-cover" src="../../imgs/me.jpg"/></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="https://twitter.com/psdevuk">Adam Bacon</a></div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Powershell</div>
+        </div>
+        <div>,</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Modules</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2022-09-20</span></div>
+</div>
+
+<p><figure class="content-center">
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.lbznQTGs0_yX8n0tcN3_vQHaFu%26pid%3DApi&amp;f=1" alt="Nothing like a good work-out to get your brain-cells going" />
+    <figcaption class="caption">Nothing like a good work-out to get your brain-cells going</figcaption>
+</figure>
+</p>
+<p>This is the underlying component which made all this possible:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Original React Component</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.npmjs.com/package/preview-url-component</span>
+    </div>
+    <a href="https://www.npmjs.com/package/preview-url-component" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>You can get yourself a copy of this module on the Powershell Gallery:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link To Download UDLinkPreview Module</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.powershellgallery.com/packages/UDLinkPreview/1.0.1</span>
+    </div>
+    <a href="https://www.powershellgallery.com/packages/UDLinkPreview/1.0.1" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Here is the GitHub repository to this module which also includes all the project directories and files associated in the building of this component:-
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">GitHub Link to this UDLinkPreview Repository</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/psDevUK/UDLinkPreview</span>
+    </div>
+    <a href="https://github.com/psDevUK/UDLinkPreview" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>A simple GIF showing the component in action on a Powershell Universal dashboard:-
+<figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDLinkPreview/main/UDLinkPreviewDemo.gif" alt="How this looks in action" />
+    <figcaption class="caption">How this looks in action</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="happy-friday">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#happy-friday">#</doc-anchor-trigger>
+        <span>Happy Friday <span class="docs-emoji">&#x1F60F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2019%2F09%2F138861-crossed-avatar-press-he.jpg&amp;f=1&amp;nofb=1" alt="Hope your Friday is going better than this" />
+    <figcaption class="caption">Hope your Friday is going better than this</figcaption>
+</figure>
+</p>
+<p>Yes it is Friday the end of the working week for most office-based individuals. So I heard this phrase being bumped about recently <strong>Happy Friday</strong>. So what better way to appreciate a <strong>Happy Friday</strong> is with a brand-new <strong>Powershell Universal Component</strong>.</p>
+<p>I worked out recently using the blog I have done and the dates recorded on them, that I have built 15 Powershell Universal Modules in the last 20 days. So I only had 5 modules I missed out on for a module a day. I thought that was a pretty amazing fact to share with you all.</p>
+<p>Possibly the 5 days were spent searching for a component that did not exist already. Like I nearly built the <strong>syntax highlighter</strong> to only then search the Powershell Universal Market-Place to find out it had already been done by <strong>Adam Driscoll</strong> so there was no need to build that. I looked at animation, then I discover in the new documentation that animation now comes built-in, so again there was no need.</p>
+<p>Honestly it has been really tough to find useful components I believe are worthy of bringing to <strong>Powershell Universal</strong>, this is down to having built a load of custom components already in the past, and the fact as I mentioned in the last paragraph and previous blogs <strong>there are now so many built-in components to choose from with-in Powershell Universal, that you are already spoilt for choice</strong></p>
+<doc-anchor-target id="why-build-custom-components">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-build-custom-components">#</doc-anchor-trigger>
+        <span>Why Build Custom Components? <span class="docs-emoji">&#x1F9E0;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>For me as I have said many times before, that this software <strong>Powershell Universal</strong> gives you unlimited possiblities on what you can do and display with the code you produce. The product has matured a lot since it was first released, and as mentioned before has a thriving community behind the product, who like me love using it. So as this product has been about for a good few years now, over that time-period various requests and moving to a new React component library Material-UI a lot more components have come as standard out-the-box.</p>
+<p>I really do believe this is a magical bit of software to give you that opportunity to express yourself through the code you write. I am not a web-designer by trade, I have dabbled in doing bits here and there, and maintaining IIS servers. However I have never been employed as a front-end designer. So for me to try and start coding that sort of thing would take a lot of time to learn new tricks, and for me would go against just using Powershell cmdlets for the dashboards I build. What I am on about it the exact component I just built.</p>
+<p>Said it before so will say it again, but I really am amazed at the feed-back I have had from this personal blog website, and the opportunites it has presented, as well as playing a part in helping me land this new dream-job. I have been sharing various links from this site on <strong>Twitter</strong> and <strong>LinkedIn</strong> to share what I have been working on to bring new modules to Powershell. Each time you share a hyperlink on a social-media site it will automatically turn that hyperlink into a <strong>preview link</strong> showing you a picture from the site, and a bit of information on the page, the domain and a link. Again I am not a web-designer by trade, or front-end designer, but this to me is really, really cool.</p>
+<p>I know this product has <code v-pre>New-UDLink</code> to be able to display hyperlinks, but having shared a lot of links recently on social-media sites I really do like the <strong>link preview</strong> that automatically happens when you share a link.  As in a bit of information about that particular hyperlink is automatically displayed like the domain, a picture or media, and some information on that webpage the link leads to. This to me is <strong>really nice</strong> it turns plain text hyperlink into something that looks much more attractive. It also personally gives me a bit more confidence about the link I am clicking on, and the type of webpage I expect to land on after clicking the link.</p>
+<p>So for me this is a prime opportunity to bring this <strong>feature of a link preview</strong> to the mighty <strong>Powershell Universal</strong> to expand the eco-system of components, and giving end-users more choice on things you can do with this software. I do not know why more community members do not get building custom components? As all the information on how-to do this is out there, and I am really hoping these blogs will inspire some others to have a go at creating a custom component they want for their dashboard.</p>
+<p>Like I could have done some <strong>Powershell</strong> scripting to obtain this information, by writing a function and placing that within the dashboard, and display this information on an existing component such as <code v-pre>New-UDCard</code> and achieving the same or similar results. I do not like to think of this as taking a short-cut (as this particular component took me a lot longer than anticipated to complete) to writing a Powershell function, for me it is like why am I going to re-invent-the-wheel if the wheel already exists. In this scenario the <strong>wheel</strong> is the <strong>link preview component</strong> I was sure that one would exist that I could use, and further-more by building this as a dedicated component, it makes it far-easier for other <strong>Powershell Universal</strong> users to use this.</p>
+<doc-anchor-target id="package-problems">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#package-problems">#</doc-anchor-trigger>
+        <span>Package Problems <span class="docs-emoji">&#x1F97A;</span></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://i.pinimg.com/736x/7b/5d/48/7b5d48b5bb18b952b0d1c033b768b224.jpg" alt="So my problems were not as bad as this particular problem which made me happier about the situation, as it could have be worse like this picture displays a real bad problem to deal with" />
+    <figcaption class="caption">So my problems were not as bad as this particular problem which made me happier about the situation, as it could have be worse like this picture displays a real bad problem to deal with</figcaption>
+</figure>
+</p>
+<p>Before selecting a component to build I like to actually look at the <strong>read me</strong> to find out more about the component and the props (parameters) I can pass to the component. First-off the choice was more limited to what I was expecting, the majority of the packages were all forked from one-particular package.</p>
+<p>I tried numerous variants of these packages and the official package they were based on, but it seemed very hit-and-miss with the results. Like the component would work, I would tweak a CSS setting in the main project file, and then it would stop working, then possible start working after a good amount of time, or have issues displaying multiple cards. I almost got annoyed by the process, as I was thinking it had something to do with existing node packages. Like the time to load the actual end result seemed to also vary a great deal. Sometimes it would just be stuck on the CSS loading bit, and it would only become evident that there was an issue when looking into the developer browser tools to see there was an error, and that link I had parsed was never going to be retrieved.</p>
+<p>Only after reading a full article on on of the forked packages I noticed they had a small section saying if using this for to display URLs then it can be very sparodic on the results. Damn I wish I had of read all the articles from start to finish as I only normally look at the code section and the prop section. So it was not me or me changing the code, it was the end API server being at fault. I mean some of the packages I tried did not even have an API configured. There was also a section on how you could configure and install your own server to be able to fetch the preview link information. Wow this was starting to become over-kill even for me. I looked on the internet briefly for an API server but these all seemed to either require you to sign up for a key, and then was limited to a certain number before it came a paid-for-service.</p>
+<p>As always I did not want to stop once I got started looking at this component. I think I tweaked my search-phrase I was using to find this component a little then I found a preview link component, that also offered you a link to the API server it was using which allowed me to test to see how reliable the results were. This seemed fantastic, and exactly what I was looking for first time round, after having already spent a good number of hours trying and customising numerous node packages for this project, only to find they did not work, or were too un-reliable to release as a component.</p>
+<p>This is why this particular project took me a lot longer than I originally anticipated. As finding a package which ticked all the boxes and was also very reliable seemed near impossible. Thankfully I did not give-up on that challenge and kept persevering until the end.</p>
+<p><figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDLinkPreview/main/demo.png" alt="A Demo of a single link preview display. Looks nice right 😁" />
+    <figcaption class="caption">A Demo of a single link preview display. Looks nice right <span class="docs-emoji">&#x1F601;</span></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="demo-dashboard">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#demo-dashboard">#</doc-anchor-trigger>
+        <span>Demo Dashboard <span class="docs-emoji">&#x1F447;</span></span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">New-UDDashboard -Title 'PowerShell Universal' -Content {
+
+New-UDRow -Columns {
+New-UDColumn -Content {
+
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udimagezoom/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udslidercaptcha/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udlottieplayer/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udawesomeaudio/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udtextfit/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udtruncatetext/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udcolorful/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udlinkify/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udscrollprogress/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udtextloop/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udwizardry/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udreadtime/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udfaq/&quot;
+} -LargeSize 3
+New-UDColumn -Content {
+New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udtestimonial/&quot;
+} -LargeSize 3
+}
+}</code></pre>
+</doc-codeblock></div>
+<p>For me this was a super-simple way to design a very rich looking dashboard with information to various contents, that you have the chance to read about on the card displaying the link preview. I took the time to customise the original CSS file it was using to display the information. I did not pass these as props in the main component, this does not mean you cannot customise it to your requirements. It just means that you will have to use <code v-pre>New-UDStyle</code> to adjust the appearance if you do not like the look of the default appearance.</p>
+<p>Again this process took a bit longer than I originally thought, as I really liked the look of certain displays, but then found this mis-aligned the height of some cards depending on the image. I could not decide where the picture would look best, as originally it was on the right-hand-side. Eventually I decided placing the image on the top of the link preview looked the nicest setting. I customised all the font-displays and certain colours, to give that nice easy read appeal to the font.</p>
+<p>Weirdly, and this was the same for the other packages I had already spent hours testing, was that although you got a beautiful link preview and the cursor automatically changed to a hand cursor as if the item was able to be clicked, clicking on the link preview did nothing. So now faced another challenge that I needed this item to actually be a hyperlink as well, as to me it would only be half-a-job if you could not actually click on the link preview to visit the site. Thankfully this was not too difficult and is shown in the below JSX file I constructed to build this component</p>
+<doc-anchor-target id="the-project">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-project">#</doc-anchor-trigger>
+        <span>The Project <span class="docs-emoji">&#x1F3D7;&#xFE0F;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>This is the final version of the component JSX file:-</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">import React from 'react';
+import { withComponentFeatures } from 'universal-dashboard';
+import Preview from  'preview-url-component';
+import './preview.css';
+
+const UDLinkPreview = props =&gt; {
+  return (
+    &lt;a href={props.url} style={{['text-decoration']: &quot;none&quot;}}&gt;
+    &lt;Preview
+        key={props.id}
+        url={props.url}
+        loadingText={props.loadingText}
+        notFound={props.notFound}
+    /&gt;
+    &lt;/a&gt;
+);
+}
+
+export default withComponentFeatures(UDLinkPreview)</code></pre>
+</doc-codeblock></div>
+<p>This particular component also offered two props which other components did not offer. This was <strong>custom loading text</strong> and <strong>custom page not found text</strong> which would also give the end-user more options for what they wanted displayed on the screen during this period of loading, or if the page could not be found, the appropriate text to be displayed. I done a good amount of testing with this package and not once have I had any issues with the content displaying, hence I have decided to release this as another custom component for <strong>Powershell Universal</strong>.</p>
+<p><figure class="content-center">
+    <img src="https://raw.githubusercontent.com/psDevUK/UDLinkPreview/main/wiz.png" alt="Just being able to display hyperlinks like this, just makes me want to click it so much more than a regular plain looking hyperlink. All I had to do was supply a URL and I got this display back" />
+    <figcaption class="caption">Just being able to display hyperlinks like this, just makes me want to click it so much more than a regular plain looking hyperlink. All I had to do was supply a URL and I got this display back</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="powershell-function">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#powershell-function">#</doc-anchor-trigger>
+        <span>Powershell Function <span class="docs-emoji">&#x1F913;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>To make the actual <strong>cmdlet behind this component you need to edit the pre-defined function in the .PSM1 file</strong> so this is my finished <strong>.PSM1 before running the invoke-build</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-powershell"><code v-pre class="language-powershell">$IndexJs = Get-ChildItem &quot;$PSScriptRoot\index.*.bundle.js&quot;
+$AssetId = [UniversalDashboard.Services.AssetService]::Instance.RegisterAsset($IndexJs.FullName)
+
+function New-UDLinkPreview {
+       &lt;#
+    .SYNOPSIS
+    Creates a link preview of the supplied hyperlink
+    
+    .DESCRIPTION
+    Allows you to display a link preview of the URL you have provided to a given website. This is very similar to what you see on social-media sites when posting a hyperlink. 
+    
+    .PARAMETER Id
+    The ID of this editor
+
+    .PARAMETER URL
+    A full URL address of a website. This is a mandatory parameter
+
+    .PARAMETER TextLoading
+    Text to be displayed whilst the component is loading. Defaulted to Please wait...
+
+    .PARAMETER TextNotFound
+    Text to be displayed if the supplied URL cannot be found or the information cannot be retrieved. Defaulted to URL Not Found
+
+    .EXAMPLE
+    New-UDLinkPreview -URL &quot;https://adam-bacon.netlify.app/powershell-universal/udtestimonial/&quot;
+    #&gt;
+    
+    
+    param(
+        [Parameter()]
+        [string]$Id = (New-Guid).ToString(),
+        [Parameter(Mandatory)]
+        [string]$URL,
+        [Parameter()]
+        [string]$TextLoading = &quot;Please wait...&quot;,
+        [Parameter()]
+        [string]$TextNotFound = &quot;URL Not Found&quot;
+
+    )
+
+    End {
+        @{
+            assetId = $AssetId 
+            isPlugin = $true 
+            type = &quot;udlinkpreview&quot;
+            id = $Id
+
+            url = $URL
+            loadingText = $TextLoading
+            notFound = $TextNotFound
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Read The Help</h5>
+<p>Even if you just glanced through the above code, you should hopefully notice that I did include a decent help file for each parameter so here is the help just on the parameters</p>
+        </div>
+    </div>
+</div>
+<p>There are only two additonal parameters to the one mandatory parameter. The code I provided for the demo dashboard shows me only using the one required mandatory parameter to display the beauty of this component to the end-user. I just wanted this to be as easy-as-possible to use, and produce amazingly good looking results, all from a plain looking hyperlink. I think that particular mission has now been accomplished.</p>
+<doc-anchor-target id="marketplace-link">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#marketplace-link">#</doc-anchor-trigger>
+        <span>MarketPlace link <span class="docs-emoji">&#x1F92B;</span></span>
+    </h2>
+</doc-anchor-target>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Link to this module on marketplace</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://marketplace.universaldashboard.io/Dashboard/UDLinkPreview</span>
+    </div>
+    <a href="https://marketplace.universaldashboard.io/Dashboard/UDLinkPreview" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="that-is-how-this-powershell-module-was-done-till-next-time-take-care">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#that-is-how-this-powershell-module-was-done-till-next-time-take-care">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A5;</span> That is how this Powershell module was done. Till next time, take care</span>
+    </h2>
+</doc-anchor-target>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udtestimonial/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">UD​Testimonial</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../powershell-universal/udfullscreen/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">UD​Full​Screen</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "UDLinkPreview", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>
